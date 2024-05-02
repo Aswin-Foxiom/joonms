@@ -35,7 +35,7 @@ function TestimonialSection() {
                 <div className="sec-title">
                   <h2>Who we Are </h2>
                   {/* <div className="text">
-                    Check what’s our client say about us!
+                    Check what&rsquo;s our client say about us!
                   </div> */}
                 </div>
                 <div className="testimonial-carousel owl-carousel owl-theme">
@@ -48,7 +48,7 @@ function TestimonialSection() {
                         enterprises spanning various sectors across the globe.
                         With a rich legacy of innovation and excellence, we have
                         embarked on a journey of expansion into diverse
-                        industries, including  mobile app development, mobile
+                        industries, including mobile app development, mobile
                         sales, sales solutions, banking apps, cybersecurity,
                         HVAC, and security services. Our commitment to
                         delivering cutting-edge solutions and unparalleled
@@ -74,7 +74,7 @@ function TestimonialSection() {
                         potential. Our holistic approach encompasses not only
                         educational support but also assistance and resources
                         for parents, ensuring they have the necessary tools and
-                        knowledge to support their child's development.
+                        knowledge to support their child&rsquo;s development.
                       </div>
                       {/* <div className="author">- Raisa Moni</div>
                       <div className="designation">Envato Customer</div> */}
