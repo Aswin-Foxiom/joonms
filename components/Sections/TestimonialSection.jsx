@@ -74,7 +74,7 @@ function TestimonialSection() {
                         potential. Our holistic approach encompasses not only
                         educational support but also assistance and resources
                         for parents, ensuring they have the necessary tools and
-                        knowledge to support their child&rsquo;s development.
+                        knowledge to support their childs development.
                       </div>
                       {/* <div className="author">- Raisa Moni</div>
                       <div className="designation">Envato Customer</div> */}
