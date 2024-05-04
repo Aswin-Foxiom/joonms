@@ -59,7 +59,7 @@ function page() {
                       and understanding empowers us to craft apps that not only
                       solve problems but enhance experiences, ultimately
                       fostering lasting partnerships built on trust,
-                      reliability, and mutual success."
+                      reliability, and mutual success.
                     </p>
                   </div>
                 </div>
