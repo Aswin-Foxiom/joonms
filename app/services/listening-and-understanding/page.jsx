@@ -1,8 +1,5 @@
-"use client";
-import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import Script from "next/script";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 function page() {
   return (
@@ -44,16 +41,16 @@ function page() {
                   <div className="text">
                     <p>
                       We recognize that every individual, every business, has
-                      unique challenges and aspirations. Thats why we strive to
-                      go beyond simply hearing our customers; we seek to truly
-                      understand them. By immersing ourselves in their
+                      unique challenges and aspirations. That&apos;s why we
+                      strive to go beyond simply hearing our customers; we seek
+                      to truly understand them. By immersing ourselves in their
                       perspectives, concerns, and objectives, we can effectively
                       tailor our solutions to address their specific pain points
                       and goals.
                     </p>
                     <p>
                       This customer-centric approach is at the heart of
-                      everything we do. Its what drives us to innovate, to
+                      everything we do. It&apos;s what drives us to innovate, to
                       create, and to deliver practical solutions that not only
                       meet but exceed expectations. Our commitment to listening
                       and understanding empowers us to craft apps that not only
