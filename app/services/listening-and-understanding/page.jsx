@@ -44,7 +44,7 @@ function page() {
                   <div className="text">
                     <p>
                       We recognize that every individual, every business, has
-                      unique challenges and aspirations. Thats why we strive to
+                      unique challenges and aspirations. That's why we strive to
                       go beyond simply hearing our customers; we seek to truly
                       understand them. By immersing ourselves in their
                       perspectives, concerns, and objectives, we can effectively
@@ -53,7 +53,7 @@ function page() {
                     </p>
                     <p>
                       This customer-centric approach is at the heart of
-                      everything we do. Its what drives us to innovate, to
+                      everything we do. It's what drives us to innovate, to
                       create, and to deliver practical solutions that not only
                       meet but exceed expectations. Our commitment to listening
                       and understanding empowers us to craft apps that not only
