@@ -39,25 +39,7 @@ function page() {
                 >
                   {/* <h2>Listening & unuderstanding</h2> */}
                   <div className="text">
-                    <p>
-                      We recognize that every individual, every business, has
-                      unique challenges and aspirations. That&apos;s why we
-                      strive to go beyond simply hearing our customers; we seek
-                      to truly understand them. By immersing ourselves in their
-                      perspectives, concerns, and objectives, we can effectively
-                      tailor our solutions to address their specific pain points
-                      and goals.
-                    </p>
-                    <p>
-                      This customer-centric approach is at the heart of
-                      everything we do. It&apos;s what drives us to innovate, to
-                      create, and to deliver practical solutions that not only
-                      meet but exceed expectations. Our commitment to listening
-                      and understanding empowers us to craft apps that not only
-                      solve problems but enhance experiences, ultimately
-                      fostering lasting partnerships built on trust,
-                      reliability, and mutual success.
-                    </p>
+                    <p>Hello</p>
                   </div>
                 </div>
               </div>
