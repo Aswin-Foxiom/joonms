@@ -22,7 +22,7 @@ function page() {
             />
             <div className="inner-container clearfix">
               <div className="pull-left">
-                <h1>Listening & Understanding</h1>
+                <h1>Hi</h1>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@ function page() {
                 >
                   {/* <h2>Listening & unuderstanding</h2> */}
                   <div className="text">
-                    <p>Hello</p>
+                    <p>Hi</p>
                   </div>
                 </div>
               </div>
