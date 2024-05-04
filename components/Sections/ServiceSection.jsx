@@ -41,10 +41,12 @@ function ServiceSection() {
 
         <div className="auto-container">
           <div className="sec-title centered">
-            <h2>What We Do</h2>
-            <div className="text">
+            <h2>
+              Driven by principles <br /> Defined by results
+            </h2>
+            {/* <div className="text">
               The things motivates me is common <br /> form of motivation.
-            </div>
+            </div> */}
           </div>
           <div className="row clearfix">
             {/* Services Block */}
@@ -62,13 +64,18 @@ function ServiceSection() {
                   <span className="icon flaticon-backend" />
                 </div>
                 <h3>
-                  <a href="/">Strategy &amp; Research.</a>
+                  <a href="/services/listening-and-understanding">
+                    Listening &amp; Understanding.
+                  </a>
                 </h3>
                 <div className="text">
-                  Lorem ipsum dolor si amet, an dus situ pertinacia constituto,
-                  mir dignsius quo great.
+                  Dedicated to actively listening to our customers, putting
+                  ourselves in their shoes, and empathizing with their needs.
                 </div>
-                <a href="/" className="read-more">
+                <a
+                  href="/services/listening-and-understanding"
+                  className="read-more"
+                >
                   More About This
                 </a>
               </div>
@@ -88,13 +95,18 @@ function ServiceSection() {
                   <span className="icon flaticon-code" />
                 </div>
                 <h3>
-                  <a href="/">Design &amp; Development.</a>
+                  <a href="/services/research-and-development">
+                    Research &amp; Development.
+                  </a>
                 </h3>
                 <div className="text">
-                  Lorem ipsum dolor si amet, an dus situ pertinacia constituto,
-                  mir dignsius quo great.
+                  Embarking on a journey of continuous research and innovation,
+                  leveraging the latest AI technologies.
                 </div>
-                <a href="/" className="read-more">
+                <a
+                  href="/services/research-and-development"
+                  className="read-more"
+                >
                   More About This
                 </a>
               </div>
@@ -114,13 +126,15 @@ function ServiceSection() {
                   <span className="icon flaticon-search-1" />
                 </div>
                 <h3>
-                  <a href="/">Managment &amp; Marketing.</a>
+                  <a href="/services/customer-happiness">
+                    Customer Happiness .
+                  </a>
                 </h3>
                 <div className="text">
-                  Lorem ipsum dolor si amet, an dus situ pertinacia constituto,
-                  mir dignsius quo great.
+                  Our commitment to customer happiness and satisfaction extends
+                  beyond mere transactional interactions.
                 </div>
-                <a href="/" className="read-more">
+                <a href="/services/customer-happiness" className="read-more">
                   More About This
                 </a>
               </div>

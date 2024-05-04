@@ -11,9 +11,19 @@ function Navbar() {
             <div className="logo-outer">
               <div className="logo">
                 <a href="/">
-                  <img src="images/joon/logo1-croped.png" alt="" title="" />
+                  <img src="/images/joon/logo1-croped.png" alt="" title="" />
                   {/* <img src="images/logo.png" alt="" title="" /> */}
                 </a>
+                <span
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: "bold",
+                    marginLeft: "10px",
+                    color: "#FFE000",
+                  }}
+                >
+                  JoonMS
+                </span>
               </div>
             </div>
             {/*Nav Box*/}
@@ -152,13 +162,13 @@ function Navbar() {
                   <a href="contact.html">Contact</a>
                 </li> */}
                     <li>
-                      <a href="#what">What</a>
+                      <a href="/#what">What</a>
                     </li>
                     <li>
-                      <a href="#who">Who</a>
+                      <a href="/#who">Who</a>
                     </li>
                     <li>
-                      <a href="#where">Where</a>
+                      <a href="/#where">Where</a>
                     </li>
                   </ul>
                 </div>

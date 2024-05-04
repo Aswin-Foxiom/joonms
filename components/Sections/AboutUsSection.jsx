@@ -24,11 +24,11 @@ function AboutUsSection() {
                 <div className="image">
                   <img src="images/resource/about-1.png" alt="" />
                 </div>
-                <div className="btn-box">
+                {/* <div className="btn-box">
                   <a href="#" className="theme-btn btn-style-two">
                     <span className="txt">Learn More</span>
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="content-column col-lg-6 col-md-12 col-sm-12">
@@ -61,7 +61,7 @@ function AboutUsSection() {
                   </p>
                 </div>
                 <div className="author">
-                  Baijoon N S ( Administrative Coordinator ).
+                  Baijoon N S <br /> ( Administrative Coordinator )
                 </div>
                 {/* <div className="signature">
                   <img src="images/icons/signature.png" alt="" />

@@ -6,9 +6,7 @@ import Footer from "@/components/Footer";
 import BannerSection from "@/components/Sections/BannerSection";
 import ServiceSection from "@/components/Sections/ServiceSection";
 import AboutUsSection from "@/components/Sections/AboutUsSection";
-import PricingSection from "@/components/Sections/PricingSection";
 import TestimonialSection from "@/components/Sections/TestimonialSection";
-import NewsSection from "@/components/Sections/NewsSection";
 export default function page() {
   return (
     <div>
@@ -49,10 +47,10 @@ export default function page() {
                 <div className="clearfix">
                   <div className="pull-left">
                     <div className="title">Have any question about us?</div>
-                    <h2>AI Related Content</h2>
+                    <h2>How Do We Do ?</h2>
                   </div>
                   <div className="pull-right">
-                    <a href="contact.html" className="theme-btn btn-style-two">
+                    <a href="/" className="theme-btn btn-style-two">
                       <span className="txt">Contact Us</span>
                     </a>
                   </div>

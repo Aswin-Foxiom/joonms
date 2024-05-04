@@ -74,13 +74,13 @@ function Footer() {
                       <div className="widget-content">
                         <ul className="list">
                           <li>
-                            <a href="#what">What</a>
+                            <a href="/#what">What</a>
                           </li>
                           <li>
-                            <a href="#who">Who</a>
+                            <a href="/#who">Who</a>
                           </li>
                           <li>
-                            <a href="#where">Where</a>
+                            <a href="/#where">Where</a>
                           </li>
                         </ul>
                       </div>
