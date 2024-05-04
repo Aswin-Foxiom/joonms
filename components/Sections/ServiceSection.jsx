@@ -65,7 +65,7 @@ function ServiceSection() {
                 </div>
                 <h3>
                   <a href="/services/listening-and-understanding">
-                    Listening &amp; Understanding.
+                    Listening & Understanding.
                   </a>
                 </h3>
                 <div className="text">
@@ -96,7 +96,7 @@ function ServiceSection() {
                 </div>
                 <h3>
                   <a href="/services/research-and-development">
-                    Research &amp; Development.
+                    Research & Development.
                   </a>
                 </h3>
                 <div className="text">
