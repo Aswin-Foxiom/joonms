@@ -126,9 +126,7 @@ function ServiceSection() {
                   <span className="icon flaticon-search-1" />
                 </div>
                 <h3>
-                  <a href="/services/customer-happiness">
-                    Customer Happiness .
-                  </a>
+                  <a href="/services/customer-happiness">Customer Happiness.</a>
                 </h3>
                 <div className="text">
                   Our commitment to customer happiness and satisfaction extends
