@@ -47,7 +47,7 @@ function page() {
                     <p>
                       We understand that true value lies in the ongoing support
                       we provide, ensuring that our solutions evolve with our
-                      customers' needs. Additionally, our pricing plans are
+                      customers needs. Additionally, our pricing plans are
                       designed with flexibility in mind, tailored to fit
                       individual requirements without compromising on quality.
                     </p>
@@ -57,7 +57,7 @@ function page() {
                       ourselves. Through their word-of-mouth recommendations,
                       our satisfied customers become integral to our expansion,
                       driving mutual growth and success. At JoonMS, customer
-                      advocacy is not just a byproduct of our service; it's the
+                      advocacy is not just a byproduct of our service; its the
                       cornerstone of our collaborative journey towards
                       excellence.
                     </p>

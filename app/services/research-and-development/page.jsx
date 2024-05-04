@@ -54,13 +54,12 @@ function page() {
                       trends in the digital realm.
                     </p>
                     <p>
-                      {" "}
                       By integrating AI technologies into our processes, we
                       enhance efficiency, accuracy, and scalability, empowering
                       our customers with intelligent IT solutions that drive
                       transformative results. At JoonMS, our commitment to
                       excellence knows no bounds. We strive to be not just a
-                      solution provider, but a trusted partner in our customers'
+                      solution provider, but a trusted partner in our customers
                       digital transformation journey, powered by the latest
                       advancements in AI technology.
                     </p>
