@@ -50,7 +50,7 @@ export default function page() {
                     <h2>How Do We Do ?</h2>
                   </div>
                   <div className="pull-right">
-                    <a href="/" className="theme-btn btn-style-two">
+                    <a href="/#where" className="theme-btn btn-style-two">
                       <span className="txt">Contact Us</span>
                     </a>
                   </div>

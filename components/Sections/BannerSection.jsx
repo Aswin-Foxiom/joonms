@@ -75,7 +75,7 @@ function BannerSection() {
                       </div>
                       <div className="link-box">
                         <a
-                          href="about.html"
+                          href="/#services"
                           className="theme-btn btn-style-two"
                         >
                           <span className="txt">More About</span>

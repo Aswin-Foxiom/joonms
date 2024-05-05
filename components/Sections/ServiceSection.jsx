@@ -2,7 +2,7 @@ import React from "react";
 
 function ServiceSection() {
   return (
-    <div>
+    <div id="services">
       {" "}
       <section className="services-section">
         <div className="icons">
