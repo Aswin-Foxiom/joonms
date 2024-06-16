@@ -10087,6 +10087,12 @@ img {
 	padding-top: 100px;
 }
 
+@media (max-width: 767px) {
+	.contact-page-section {
+		padding-top: 0px;
+	}
+}
+
 .contact-page-section .map-column {
 	position: relative;
 	margin-bottom: 40px;
@@ -10183,8 +10189,9 @@ img {
 	margin-bottom: 45px;
 }
 
+/* login-change */
 .contact-form .form-group {
-	margin-bottom: 20px;
+	margin-bottom: 8px;
 }
 
 .contact-form .form-group:last-child {
@@ -12257,4 +12264,17 @@ img {
 	top: 50px;
 	right: 20px;
 	bottom: -50px;
+}
+
+@media (min-width: 768px) {
+	.mt-md-20 {
+		margin-top: 20px;
+	}
+}
+
+
+.responsive-img {
+	border-radius: 20px;
+	width: 100%;
+	height: auto;
 }

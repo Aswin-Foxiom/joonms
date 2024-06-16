@@ -1,6 +1,14 @@
-import React from "react";
+"use client";
+import MyContext from "@/app/context/Context";
+import React, { useContext } from "react";
 
 function Navbar() {
+  const { user, setUser } = useContext(MyContext);
+
+  const onLogoutClicked = () => {
+    localStorage.clear();
+    setUser(null);
+  };
   return (
     <header className="main-header header-style-one">
       {/* Header Upper */}
@@ -184,9 +192,19 @@ function Navbar() {
                 </div>
                 {/* Button Box */}
                 <div className="btn-box">
-                  <a href="/" className="theme-btn btn-style-one">
-                    <span className="txt">Get started</span>
-                  </a>
+                  {user ? (
+                    <a
+                      href={undefined}
+                      onClick={onLogoutClicked}
+                      className="theme-btn btn-style-one"
+                    >
+                      <span className="txt">Logout</span>
+                    </a>
+                  ) : (
+                    <a href="/login" className="theme-btn btn-style-one">
+                      <span className="txt">Login</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

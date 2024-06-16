@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Script from "next/script";
 import Image from "next/image";
@@ -7,7 +8,31 @@ import BannerSection from "@/components/Sections/BannerSection";
 import ServiceSection from "@/components/Sections/ServiceSection";
 import AboutUsSection from "@/components/Sections/AboutUsSection";
 import TestimonialSection from "@/components/Sections/TestimonialSection";
+
+import { Carousel } from "primereact/carousel";
+import PricingSection from "@/components/Sections/PricingSection";
+import axios from "axios";
+
 export default function page() {
+  // const Payment_Function = async () => {
+  //   var data = {
+  //     name: "Name",
+  //     price: 200,
+  //     origin_site: "http://localhost:8000",
+  //     enroll_id: 2,
+  //     type: "Programme",
+  //   };
+  //   await axios
+  //     .post(`http://localhost:8000/enroll/create-checkout-session/`, data, {})
+  //     .then((res) => {
+  //       // console.log(res.data)
+  //       console.log("THE RESPONSE IS", res);
+
+  //       window.location.assign(res.data.message.url);
+  //       // return navigate(res.data.message.url)
+  //     });
+  // };
+
   return (
     <div>
       <>
@@ -17,6 +42,16 @@ export default function page() {
         <link href="css/bootstrap.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
         <link href="css/responsive.css" rel="stylesheet" />
+
+        <link href="css/masterslider/style/masterslider.css" rel="stylesheet" />
+        <link
+          href="css/masterslider/skins/default/style.css"
+          rel="stylesheet"
+        />
+        <link
+          href="css/masterslider/style/ms-partialview.css"
+          rel="stylesheet"
+        />
         {/* <link
           rel="shortcut icon"
           href="images/favicon.png"
@@ -58,6 +93,7 @@ export default function page() {
               </div>
             </div>
           </section>
+          {/* <button onClick={Payment_Function}> SUBMIT</button> */}
 
           <ServiceSection />
 
@@ -66,6 +102,8 @@ export default function page() {
           {/* <PricingSection /> */}
 
           <TestimonialSection />
+
+          <PricingSection />
 
           {/* <NewsSection /> */}
 
@@ -102,6 +140,8 @@ export default function page() {
         <Script src="/js/jquery-ui.js"></Script>
         <Script src="/js/bootstrap.min.js"></Script>
         <Script src="/js/jquery.paroller.min.js"></Script>
+        <Script src="/js/jquery.easing.min.js"></Script>
+        <Script src="/js/masterslider.js"></Script>
         <Script src="/js/jquery.fancybox.js"></Script>
         <Script src="/js/owl.js"></Script>
         <Script src="/js/element-in-view.js"></Script>
