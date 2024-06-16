@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import React from "react";
 
-function page() {
+function Page() {
   return (
     <div>
       <link href="/css/bootstrap.css" rel="stylesheet" />
@@ -101,4 +101,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

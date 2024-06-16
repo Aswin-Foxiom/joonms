@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Script from "next/script";
 import React from "react";
 
-function page() {
+function Page() {
   return (
     <div>
       <link href="/css/bootstrap.css" rel="stylesheet" />
@@ -106,4 +106,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
