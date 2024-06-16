@@ -8,7 +8,8 @@ import MyContext from "../context/Context";
 import { useFormik } from "formik";
 import { loginValidationSchema } from "../utils/validation";
 
-function page() {
+function Page() {
+  // Changed here
   const { userId } = useContext(MyContext);
   const [Loading, setLoading] = useState(false);
   const [logDatas, setlogDatas] = useState(null);
@@ -273,4 +274,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page; // Changed here
