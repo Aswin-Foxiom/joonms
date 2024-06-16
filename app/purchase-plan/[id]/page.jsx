@@ -195,20 +195,19 @@ function Page() {
                             <li>
                               Price Plan{" "}
                               <span>
-                                {" "}
-                                ₹
                                 {planData?.subtype_Id?.per_user_amt *
                                   planData?.users_allowed +
                                   planData?.subtype_Id?.per_day_backup_amt *
-                                    planData?.backup_days}
+                                    planData?.backup_days}{" "}
+                                AED
                               </span>
-                            </li>
-                            <li>
-                              Discount <span>$35.00</span>
                             </li>
                             {/* <li>
                               Discount <span>$35.00</span>
                             </li> */}
+                            <li>
+                              Discount <span> No Discount Added</span>
+                            </li>
                             {/* <li>
                               Subtotal<span className="dark">$35.00</span>
                             </li>
@@ -217,7 +216,14 @@ function Page() {
                               <span className="shipping">Free Shipping</span>
                             </li> */}
                             <li className="total">
-                              TOTAL<span className="dark">$35.00</span>
+                              TOTAL
+                              <span className="dark">
+                                {planData?.subtype_Id?.per_user_amt *
+                                  planData?.users_allowed +
+                                  planData?.subtype_Id?.per_day_backup_amt *
+                                    planData?.backup_days}{" "}
+                                AED
+                              </span>
                             </li>
                           </ul>
 

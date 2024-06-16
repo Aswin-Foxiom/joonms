@@ -41,8 +41,9 @@ function PricingSection() {
           <div className="line-one" />
           <div className="line-two" />
           <div className="icon-box">
-            <span className="icon flaticon-rocket-ship" />
+            <span className="icon fas fa-credit-card" />
           </div>
+
           <h3>{product?.name}</h3>
           <ul className="price-list">
             <li>{product?.validity_days} days validity</li>
@@ -52,10 +53,9 @@ function PricingSection() {
             <li>{product?.backup_days} days backup</li>
           </ul>
           <div className="price">
-            <sub>₹</sub>
             {product.subtype_Id.per_user_amt * product.users_allowed +
               product.subtype_Id.per_day_backup_amt * product.backup_days}
-            .00
+            .00 <sub> AED </sub>
           </div>
           <a
             href={undefined}
@@ -466,19 +466,31 @@ function PricingSection() {
           <div className="sec-title-two centered">
             <h2>Pricing Plans</h2>
             <div className="title-text">
-              We Are Specialized in the Following Services
+              We Are Specialized in the Following Plans
             </div>
           </div>
 
-          <Carousel
-            value={pricingData}
-            numVisible={3}
-            autoplayInterval={3000}
-            circular
-            numScroll={1}
-            responsiveOptions={responsiveOptions}
-            itemTemplate={productTemplate}
-          />
+          {pricingData?.length ? (
+            <Carousel
+              value={pricingData}
+              numVisible={3}
+              autoplayInterval={3000}
+              circular
+              numScroll={1}
+              responsiveOptions={responsiveOptions}
+              itemTemplate={productTemplate}
+            />
+          ) : (
+            <h1
+              style={{
+                textAlign: "center",
+                color: "black",
+              }}
+            >
+              {" "}
+              No Pricing Plans Available
+            </h1>
+          )}
 
           {/* <div className="services-carousel owl-carousel owl-theme">
             <div className="price-block style-two">
