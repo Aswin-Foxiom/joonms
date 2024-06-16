@@ -8,7 +8,8 @@ import Script from "next/script";
 import React, { useContext, useEffect, useState } from "react";
 import StripeCheckout from "react-stripe-checkout";
 
-function page() {
+function Page() {
+  // Renamed to start with an uppercase letter
   const params = useParams();
   const { user } = useContext(MyContext);
   const [planData, setplanData] = useState(null);
@@ -16,12 +17,12 @@ function page() {
   const { id } = params;
 
   useEffect(() => {
-    if (!id || id.length != 24) {
+    if (!id || id.length !== 24) {
       window.location.href = "/";
       return;
     }
     getPlanDetails();
-  }, []);
+  }, [id]); // Added dependency array
 
   const getPlanDetails = async () => {
     try {
@@ -278,4 +279,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page; // Renamed to match the function name
