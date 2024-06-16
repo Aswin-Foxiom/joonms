@@ -10093,6 +10093,12 @@ img {
 	}
 }
 
+@media (max-width: 767px) {
+	.checkout-page {
+		padding-top: 0px !important;
+	}
+}
+
 .contact-page-section .map-column {
 	position: relative;
 	margin-bottom: 40px;

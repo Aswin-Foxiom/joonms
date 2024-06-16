@@ -66,7 +66,7 @@ function PricingSection() {
               className="txt"
               style={{ fontWeight: "bolder", color: "white" }}
             >
-              Puchase
+              Purchase
             </span>
           </a>
         </div>

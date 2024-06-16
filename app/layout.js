@@ -7,12 +7,17 @@
 // }
 
 import { MyProvider } from "./context/Context";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <MyProvider>{children}</MyProvider>
+        <MyProvider>
+          {" "}
+          <ToastContainer />
+          {children}
+        </MyProvider>
       </body>
     </html>
   );
