@@ -7,6 +7,7 @@ import React, { useContext, useState } from "react";
 import MyContext from "../context/Context";
 import { useFormik } from "formik";
 import { loginValidationSchema } from "../utils/validation";
+import { showToast } from "../utils/Toast";
 
 function Page() {
   // Changed here
@@ -37,7 +38,7 @@ function Page() {
       localStorage.setItem("token", response?.data?.data?.token);
       window.location.href = "/";
     } catch (error) {
-      console.log(error?.response?.data?.message);
+      showToast(error?.response?.data?.message ?? "Something Went Wrong");
     } finally {
       setLoading(false);
     }
@@ -122,7 +123,7 @@ function Page() {
                 {/* Form Column */}
                 <div className="form-column col-lg-6 col-md-12 col-sm-12">
                   <div className="inner-column">
-                    <h2 onClick={Login}>Login</h2>
+                    <h2>Login</h2>
                     <div className="text">
                       Lorem Ipsum is simply dummy text of the printing and
                       typesetting industry.
