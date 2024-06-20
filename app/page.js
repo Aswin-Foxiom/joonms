@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Script from "next/script";
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BannerSection from "@/components/Sections/BannerSection";
@@ -9,11 +8,43 @@ import ServiceSection from "@/components/Sections/ServiceSection";
 import AboutUsSection from "@/components/Sections/AboutUsSection";
 import TestimonialSection from "@/components/Sections/TestimonialSection";
 
-import { Carousel } from "primereact/carousel";
 import PricingSection from "@/components/Sections/PricingSection";
-import axios from "axios";
+import { jwtDecode } from "jwt-decode";
+import { showToast } from "./utils/Toast";
 
 export default function page() {
+  useEffect(() => {
+    // Check if the welcome message has been shown before
+    const hasVisited = localStorage.getItem("hasVisited");
+    if (!hasVisited) {
+      const token = localStorage.getItem("token")
+        ? jwtDecode(localStorage.getItem("token"))
+        : null;
+
+      if (token) {
+        showToast("Welcome back! You're logged in now.", true);
+
+        setTimeout(() => {
+          // Call your function here
+          localStorage.setItem("hasVisited", "true");
+        }, 2000); // 2000 milliseconds = 2 seconds
+      }
+    }
+
+    // Function to clear localStorage item on page unload
+    const handleBeforeUnload = () => {
+      localStorage.removeItem("hasVisited");
+    };
+
+    // Add event listener for beforeunload
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+
   // const Payment_Function = async () => {
   //   var data = {
   //     name: "Name",

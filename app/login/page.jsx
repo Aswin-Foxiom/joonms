@@ -14,6 +14,7 @@ function Page() {
   const { userId } = useContext(MyContext);
   const [Loading, setLoading] = useState(false);
   const [logDatas, setlogDatas] = useState(null);
+  const [isShow, setisShow] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -124,10 +125,7 @@ function Page() {
                 <div className="form-column col-lg-6 col-md-12 col-sm-12">
                   <div className="inner-column">
                     <h2>Login</h2>
-                    <div className="text">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry.
-                    </div>
+                    <div className="text">Login With Joon MS Credentials.</div>
                     {/* Contact Form */}
                     <div className="contact-form">
                       <form
@@ -171,14 +169,30 @@ function Page() {
                           </div>
 
                           <div className="col-lg-12 col-md-12 col-sm-12 form-group">
-                            <input
-                              type="password"
-                              name="password"
-                              onChange={formik.handleChange}
-                              onBlur={formik.handleBlur}
-                              value={formik.values.password}
-                              placeholder="Password"
-                            />
+                            <div className="input-container">
+                              <input
+                                type={isShow ? "text" : "password"}
+                                name="password"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.password}
+                                placeholder="Password"
+                                className="input-field"
+                              />
+                              {isShow ? (
+                                <i
+                                  className="fas fa-eye-slash"
+                                  id="input-icon"
+                                  onClick={() => setisShow(!isShow)}
+                                />
+                              ) : (
+                                <i
+                                  className="fas fa-eye"
+                                  id="input-icon"
+                                  onClick={() => setisShow(!isShow)}
+                                />
+                              )}
+                            </div>
                             {formik.touched.password &&
                             formik.errors.password ? (
                               <span className="text-danger text-small pl-10">
@@ -195,7 +209,9 @@ function Page() {
                               onBlur={formik.handleBlur}
                               value={formik.values.company_id}
                               placeholder="Company ID"
+                              className="input-field"
                             />
+
                             {formik.touched.company_id &&
                             formik.errors.company_id ? (
                               <span className="text-danger text-small pl-10">
@@ -219,9 +235,21 @@ function Page() {
                                 type="submit"
                                 name="submit-form"
                               >
-                                Save
+                                Enter
                               </button>
                             )}
+                            <br />
+                            <div style={{ marginTop: "20px" }}>
+                              <span
+                                style={{
+                                  fontWeight: "bold",
+                                  color: "red",
+                                }}
+                              >
+                                To sign up or reset your password, please use
+                                our mobile app.
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </form>
