@@ -12,7 +12,7 @@ import PricingSection from "@/components/Sections/PricingSection";
 import { jwtDecode } from "jwt-decode";
 import { showToast } from "./utils/Toast";
 
-export default function page() {
+export default function Page() {
   useEffect(() => {
     // Check if the welcome message has been shown before
     const hasVisited = localStorage.getItem("hasVisited");
