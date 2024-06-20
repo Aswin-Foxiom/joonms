@@ -11981,6 +11981,8 @@ img {
 
 ***/
 
+
+
 .nav-outer .mobile-nav-toggler {
 	position: relative;
 	display: none;
@@ -12283,4 +12285,32 @@ img {
 	border-radius: 20px;
 	width: 100%;
 	height: auto;
+}
+
+/* styles/globals.css or a specific CSS file */
+.input-container {
+	position: relative;
+}
+
+.input-field {
+	width: 100%;
+	padding-right: 30px;
+	/* Adjust padding to make room for the icon */
+}
+
+#input-icon {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+
+
+@media (min-width: 1024px) {
+	.header-style-one .option-box {
+		display: block !important;
+		margin-left: 20px !important;
+	}
 }
