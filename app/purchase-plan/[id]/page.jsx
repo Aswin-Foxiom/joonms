@@ -1,5 +1,6 @@
 "use client";
 import MyContext from "@/app/context/Context";
+import { showToast } from "@/app/utils/Toast";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import axios from "axios";
@@ -7,72 +8,103 @@ import { useParams } from "next/navigation";
 import Script from "next/script";
 import React, { useContext, useEffect, useState } from "react";
 import StripeCheckout from "react-stripe-checkout";
+import { BlockUI } from "primereact/blockui";
 
 function Page() {
   // Renamed to start with an uppercase letter
+
   const params = useParams();
+  const [loading, setloading] = useState(false);
   const { user } = useContext(MyContext);
   const [planData, setplanData] = useState(null);
+  const [profile, setprofile] = useState(null);
   const [referal_id, setreferal_id] = useState("");
+  const [totalAmount, settotalAmount] = useState(0);
+  const [discount_percent, setdiscount_percent] = useState(0);
   const { id } = params;
 
+  const calculateAmount = () => {
+    const perUserAmt = planData?.subtype_Id?.per_user_amt || 0;
+    const usersAllowed = planData?.users_allowed || 0;
+    const perDayBackupAmt = planData?.subtype_Id?.per_day_backup_amt || 0;
+    const backupDays = planData?.backup_days || 0;
+
+    let amount = perUserAmt * usersAllowed + perDayBackupAmt * backupDays;
+
+    if (discount_percent) {
+      amount = amount * (1 - discount_percent / 100);
+    }
+
+    return (amount * 100).toFixed(0); // Stripe expects the amount in the smallest currency unit (e.g., cents)
+  };
+
   useEffect(() => {
-    if (!id || id.length !== 24) {
+    if (!localStorage.getItem("token") || !id || id.length !== 24) {
       window.location.href = "/";
       return;
     }
     getPlanDetails();
+    getUserProfile();
   }, [id]); // Added dependency array
+
+  useEffect(() => {
+    settotalAmount(calculateAmount());
+  }, [planData, discount_percent]);
+
+  const getUserProfile = async () => {
+    try {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      };
+
+      const response = await axios.get(
+        `https://server.joonms.com/users/profile`,
+        config
+      );
+
+      setprofile(response?.data?.data?.profile);
+
+      setdiscount_percent(
+        response?.data?.data?.profile?.company?.purchase_plan?.discount ?? 0
+      );
+    } catch (error) {}
+  };
 
   const getPlanDetails = async () => {
     try {
       const response = await axios.get(
         `https://server.joonms.com/subscriptions/${id}`
       );
-      console.log("THE RESPONSE IS", response);
       setplanData(response?.data?.data ?? null);
     } catch (error) {
-      console.log(error?.response?.data?.message);
     } finally {
-      console.log("completed");
     }
   };
 
-  const purchasePlan = async () => {
-    const token = localStorage.getItem("token");
-    const config = {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    };
-    const data = {
-      company_id: user,
-      plan_id: id,
-      referral_id: referal_id,
-      total_amt: `${
-        planData?.subtype_Id?.per_user_amt * planData?.users_allowed +
-        planData?.subtype_Id?.per_day_backup_amt * planData?.backup_days
-      }`,
-    };
-    try {
-      const response = await axios.post(
-        `https://server.joonms.com/purchase/plan`,
-        data,
-        config
-      );
-      console.log("THE RESPONSE IS", response);
-    } catch (error) {
-      console.log(error?.response?.data?.message);
-    } finally {
-      console.log("completed");
-    }
-  };
-
-  // const makePayment = async (token) => {
-  //   const body = { token };
-
+  // const purchasePlan = async () => {
+  //   const token = localStorage.getItem("token");
+  //   const config = {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   };
+  //   const data = {
+  //     company_id: user,
+  //     plan_id: id,
+  //     referral_id: referal_id,
+  //     total_amt: `${
+  //       planData?.subtype_Id?.per_user_amt * planData?.users_allowed +
+  //       planData?.subtype_Id?.per_day_backup_amt * planData?.backup_days
+  //     }`,
+  //   };
   //   try {
-  //     const response = await axios.post(`http://localhost:3002/payment`, body);
+  //     const response = await axios.post(
+  //       `https://server.joonms.com/purchase/plan`,
+  //       data,
+  //       config
+  //     );
   //     console.log("THE RESPONSE IS", response);
   //   } catch (error) {
   //     console.log(error?.response?.data?.message);
@@ -81,8 +113,46 @@ function Page() {
   //   }
   // };
 
+  const makePayment = async (token) => {
+    // const body = { token: token };
+    setloading(true);
+    const body = {
+      token: token,
+      company_id: profile?.company?._id,
+      plan_id: id,
+      amount: totalAmount / 100,
+    };
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    };
+
+    try {
+      const response = await axios.post(
+        `https://server.joonms.com/purchase/plan`,
+        body,
+        config // Include the config object here
+      );
+      showToast("You Are Successfully Purchased your plan", true);
+    } catch (error) {
+      showToast(
+        error?.response?.data?.message ?? "Something went wrong",
+        false
+      );
+    } finally {
+      setloading(false);
+    }
+  };
+
   return (
-    <div>
+    <BlockUI
+      fullScreen
+      template={
+        <h1 style={{ color: "white", fontWeight: "bolder" }}> Loading ... </h1>
+      }
+      blocked={loading}
+    >
       <>
         <meta charSet="utf-8" />
         <title>JoonMs</title>
@@ -153,7 +223,7 @@ function Page() {
               {/*Billing Details*/}
               <div className="billing-details">
                 <div className="shop-form">
-                  <form method="post" action="checkout.html">
+                  <form onSubmit={(e) => e.preventDefault()}>
                     <div className="row clearfix">
                       <div className="col-lg-6 col-md-12 col-sm-12">
                         <div className="sec-title">
@@ -206,7 +276,13 @@ function Page() {
                               Discount <span>$35.00</span>
                             </li> */}
                             <li>
-                              Discount <span> No Discount Added</span>
+                              Discount{" "}
+                              <span>
+                                {" "}
+                                {discount_percent
+                                  ? `${discount_percent} %`
+                                  : "No Discount Added"}{" "}
+                              </span>
                             </li>
                             {/* <li>
                               Subtotal<span className="dark">$35.00</span>
@@ -218,11 +294,31 @@ function Page() {
                             <li className="total">
                               TOTAL
                               <span className="dark">
-                                {planData?.subtype_Id?.per_user_amt *
-                                  planData?.users_allowed +
-                                  planData?.subtype_Id?.per_day_backup_amt *
-                                    planData?.backup_days}{" "}
-                                AED
+                                {discount_percent ? (
+                                  <>
+                                    {/* Calculate discounted amount */}
+                                    {(
+                                      (planData?.subtype_Id?.per_user_amt *
+                                        planData?.users_allowed +
+                                        planData?.subtype_Id
+                                          ?.per_day_backup_amt *
+                                          planData?.backup_days) *
+                                      (1 - discount_percent / 100)
+                                    ).toFixed(2)}{" "}
+                                    AED
+                                  </>
+                                ) : (
+                                  // Show normal total if no discount
+                                  <>
+                                    {(
+                                      planData?.subtype_Id?.per_user_amt *
+                                        planData?.users_allowed +
+                                      planData?.subtype_Id?.per_day_backup_amt *
+                                        planData?.backup_days
+                                    ).toFixed(2)}{" "}
+                                    AED
+                                  </>
+                                )}
                               </span>
                             </li>
                           </ul>
@@ -230,23 +326,23 @@ function Page() {
                           {/*Place Order*/}
                           <div
                             className="place-order"
-                            style={{ marginTop: "20px" }}
+                            style={{ marginTop: "20px", textAlign: "right" }}
                           >
-                            {/* <StripeCheckout
+                            <StripeCheckout
                               stripeKey="pk_test_51PF9MIRwgybEvRGE3uPBLqN1RiZY6TGLcabqHoJ8S4tNev0I2iJMnsL3f2mKdr8WF6E0OoJLZNl48hj8ie6Pk5NT002bYnIzbg"
-                              amount={200}
+                              amount={totalAmount}
                               currency="AED"
                               name="Joon Ms"
                               token={makePayment}
-                            /> */}
+                              className="theme-btn order-btn"
+                            />
 
-                            <button
+                            {/* <button
                               type="button"
-                              // onClick={purchasePlan}
                               className="theme-btn order-btn"
                             >
                               Purchase Now
-                            </button>
+                            </button> */}
                           </div>
                           {/*End Place Order*/}
                         </div>
@@ -281,7 +377,7 @@ function Page() {
         <Script src="/js/appear.js"></Script>
         <Script src="/js/script.js"></Script>
       </>
-    </div>
+    </BlockUI>
   );
 }
 
