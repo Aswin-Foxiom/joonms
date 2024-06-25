@@ -125,7 +125,7 @@ function Page() {
                 <div className="form-column col-lg-6 col-md-12 col-sm-12">
                   <div className="inner-column">
                     <h2>Login</h2>
-                    <div className="text">Login With Joon MS Credentials.</div>
+                    <div className="text">Login With JoonMS Credentials.</div>
                     {/* Contact Form */}
                     <div className="contact-form">
                       <form
