@@ -22,7 +22,7 @@ export default function Page() {
         : null;
 
       if (token) {
-        showToast("Welcome back! You're logged in now.", true);
+        showToast(`Welcome back ! You're logged in now.`, true);
 
         setTimeout(() => {
           // Call your function here
