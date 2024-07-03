@@ -17,17 +17,21 @@ export default function Page() {
     // Check if the welcome message has been shown before
     const hasVisited = localStorage.getItem("hasVisited");
     if (!hasVisited) {
-      const token = localStorage.getItem("token")
-        ? jwtDecode(localStorage.getItem("token"))
-        : null;
+      const token = localStorage.getItem("token");
+      try {
+        const decoded = token ? jwtDecode(token) : null;
+        if (decoded) {
+          showToast(`Welcome back! You're logged in now.`, true);
 
-      if (token) {
-        showToast(`Welcome back ! You're logged in now.`, true);
-
-        setTimeout(() => {
-          // Call your function here
-          localStorage.setItem("hasVisited", "true");
-        }, 2000); // 2000 milliseconds = 2 seconds
+          setTimeout(() => {
+            // Call your function here
+            localStorage.setItem("hasVisited", "true");
+          }, 2000); // 2000 milliseconds = 2 seconds
+        }
+      } catch (error) {
+        localStorage.clear(); // Clear localStorage in case of decoding error
+        // Alternatively, if you want to remove specific items:
+        // localStorage.removeItem('token');
       }
     }
 

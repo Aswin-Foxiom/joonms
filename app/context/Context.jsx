@@ -20,7 +20,7 @@ export const MyProvider = ({ children }) => {
         setUser(decoded?.id ?? null);
         setuserDetails(decoded);
       } catch (error) {
-        console.error("Invalid token:", error);
+        localStorage.clear();
       }
     }
   }, []);
