@@ -3,7 +3,7 @@ import MyContext from "@/app/context/Context";
 import React, { useContext, useEffect, useState } from "react";
 
 function Navbar() {
-  const { user, setUser } = useContext(MyContext);
+  const { user, setUser, userDetails } = useContext(MyContext);
   const [menuVisible, setMenuVisible] = useState(false);
 
   const toggleMenu = () => {
@@ -11,7 +11,6 @@ function Navbar() {
   };
 
   useEffect(() => {
-    console.log("Menu visibility changed:", menuVisible);
     if (menuVisible) {
       document.body.classList.add("mobile-menu-visible");
     } else {
@@ -88,9 +87,13 @@ function Navbar() {
               </nav>
               <div className="option-box clearfix">
                 <div className="number-box">
-                  <a className="phone" href="tel:+880-762-009">
-                    <span>Call Us</span> +97 150 540 8757
-                  </a>
+                  {userDetails ? (
+                    <span className="phone">{`Hi , ${userDetails?.email}`}</span>
+                  ) : (
+                    <a className="phone mr-2" href="tel:+880-762-009">
+                      <span>Call Us</span> +97 150 540 8757
+                    </a>
+                  )}
                 </div>
                 <div className="btn-box">
                   {user ? (
@@ -136,7 +139,17 @@ function Navbar() {
               </li>
             </ul>
             <div className="social-links">
-              <div className="btn-box">
+              <div className="number-box">
+                {userDetails ? (
+                  <span
+                    style={{ color: "#FFE000" }}
+                  >{`Hi , ${userDetails?.email}`}</span>
+                ) : (
+                  ""
+                )}
+              </div>
+
+              <div className="btn-box mt-4">
                 {user ? (
                   <a
                     href={undefined}

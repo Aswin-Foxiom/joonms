@@ -8,16 +8,17 @@ const MyContext = createContext();
 // Create a provider component
 export const MyProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [userDetails, setuserDetails] = useState(null);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log("THE TOKEN", token);
     if (token) {
       try {
         console.log("Start to decode");
         const decoded = jwtDecode(token);
-        console.log("Decoded");
+        console.log("Decoded", decoded);
         setUser(decoded?.id ?? null);
+        setuserDetails(decoded);
       } catch (error) {
         console.error("Invalid token:", error);
       }
@@ -25,7 +26,7 @@ export const MyProvider = ({ children }) => {
   }, []);
 
   return (
-    <MyContext.Provider value={{ user, setUser }}>
+    <MyContext.Provider value={{ user, setUser, userDetails, setuserDetails }}>
       {children}
     </MyContext.Provider>
   );
