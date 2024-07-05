@@ -9530,6 +9530,16 @@ img {
 	text-transform: capitalize;
 }
 
+.sidebar-title h3 {
+	font-size: 20px;
+	color: #371742;
+	font-weight: 700;
+	line-height: 1.2em;
+	display: inline-block;
+	padding-right: 45px;
+	text-transform: capitalize;
+}
+
 /*Blog Category*/
 
 .cat-list {
@@ -11690,7 +11700,7 @@ img {
 }
 
 .billing-details .shop-form .form-group {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .shop-form .form-group .field-label {
@@ -11829,9 +11839,9 @@ img {
 	border-bottom: 1px solid #cccccc;
 }
 
-.shop-order-box .order-list li:nth-child(4) {
+/* .shop-order-box .order-list li:nth-child(4) {
 	border-bottom: 0px;
-}
+} */
 
 .shop-order-box .order-list li span {
 	color: #222222;

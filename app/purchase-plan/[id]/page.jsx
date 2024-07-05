@@ -9,6 +9,7 @@ import Script from "next/script";
 import React, { useContext, useEffect, useState } from "react";
 import StripeCheckout from "react-stripe-checkout";
 import { BlockUI } from "primereact/blockui";
+import { Chip } from "primereact/chip";
 
 function Page() {
   // Renamed to start with an uppercase letter
@@ -226,13 +227,19 @@ function Page() {
                   <form onSubmit={(e) => e.preventDefault()}>
                     <div className="row clearfix">
                       <div className="col-lg-6 col-md-12 col-sm-12">
-                        <div className="sec-title">
-                          <h2>Refereal Code</h2>
+                        <div
+                          className="sec-title"
+                          style={{ marginBottom: "20px" }}
+                        >
+                          <h2>Referral Code</h2>
                         </div>
                         <div className="billing-inner">
                           <div className="row clearfix">
                             {/*Form Group*/}
-                            <div className="form-group col-12">
+                            <div
+                              className="form-group col-12"
+                              style={{ marginTop: "-9px" }}
+                            >
                               {/* <div className="field-label">
                                 First name <sup>*</sup>
                               </div> */}
@@ -241,14 +248,75 @@ function Page() {
                                 value={referal_id}
                                 onChange={(e) => setreferal_id(e.target.value)}
                                 name="first-name"
-                                placeholder="Refereal Code"
+                                placeholder="Referral Code"
                               />
                             </div>
                           </div>
                         </div>
+                        <div
+                          class="sidebar-title"
+                          style={{ marginBottom: "15px" }}
+                        >
+                          <h2>About the plan</h2>
+                        </div>
+                        <p>
+                          {planData?.description ?? "No Description Available"}
+                        </p>
+
+                        <div
+                          class="sidebar-title"
+                          style={{ marginBottom: "20px" }}
+                        >
+                          <h2>Services included in this plan</h2>
+                        </div>
+
+                        <div className="row">
+                          {planData?.menuLists?.length ? (
+                            <>
+                              {planData.menuLists
+                                .slice(0, 10)
+                                .map((value, index) => (
+                                  <div className="col-6" key={index}>
+                                    <span className="fa fa-star">
+                                      <span style={{ paddingLeft: "5px" }}>
+                                        {value.item}
+                                      </span>
+                                    </span>
+                                    <br />
+                                  </div>
+                                ))}
+                              {planData.menuLists
+                                .slice(10)
+                                .map((value, index) => (
+                                  <div className="col-6" key={index + 10}>
+                                    <span className="fa fa-star">
+                                      <span style={{ paddingLeft: "5px" }}>
+                                        {value.item}
+                                      </span>
+                                    </span>
+                                    <br />
+                                  </div>
+                                ))}
+                            </>
+                          ) : (
+                            <div
+                              className="sidebar-title"
+                              style={{
+                                marginBottom: "15px",
+                                textAlign: "center",
+                              }}
+                            >
+                              <h3>No services included in this plan.</h3>
+                            </div>
+                          )}
+                        </div>
                       </div>
+
                       <div className="col-lg-6 col-md-12 col-sm-12">
-                        <div className="sec-title">
+                        <div
+                          className="sec-title"
+                          style={{ marginBottom: "20px" }}
+                        >
                           <h2>Your Order</h2>
                         </div>
                         <div
@@ -257,13 +325,16 @@ function Page() {
                         >
                           <ul className="order-list">
                             <li>
-                              Prodcut<span>TOTAL</span>
+                              Product<span>TOTAL</span>
                             </li>
                             <li>
                               Plan Name <span>{planData?.name}</span>
                             </li>
                             <li>
-                              Price Plan{" "}
+                              Company <span>{profile?.company?.name}</span>
+                            </li>
+                            <li>
+                              Price Plan
                               <span>
                                 {planData?.subtype_Id?.per_user_amt *
                                   planData?.users_allowed +
@@ -332,7 +403,7 @@ function Page() {
                               stripeKey="pk_test_51PF9MIRwgybEvRGE3uPBLqN1RiZY6TGLcabqHoJ8S4tNev0I2iJMnsL3f2mKdr8WF6E0OoJLZNl48hj8ie6Pk5NT002bYnIzbg"
                               amount={totalAmount}
                               currency="AED"
-                              name="Joon Ms"
+                              name="JoonMS Computer systems & Communication equipment software trading CO. L.L.C"
                               token={makePayment}
                               className="theme-btn order-btn"
                             />
