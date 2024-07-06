@@ -7514,7 +7514,7 @@ img {
 .banner-section-four .content-box {
 	position: relative;
 	text-align: center;
-	margin-bottom: 75px;
+	margin-bottom: 0px;
 }
 
 .banner-section-four .content-box .text {
@@ -12322,5 +12322,32 @@ img {
 	.header-style-one .option-box {
 		display: block !important;
 		margin-left: 20px !important;
+	}
+}
+
+
+.thank-you-padding {
+	padding-top: 40px;
+	/* Default padding for all screens */
+}
+
+@media (min-width: 768px) {
+	.thank-you-padding {
+		padding-top: 140px !important;
+		/* Override for screens wider than 768px */
+	}
+}
+
+.thank-image {
+	height: 100%;
+	width: 100%;
+	/* Default padding for all screens */
+}
+
+@media (min-width: 768px) {
+	.thank-image {
+		height: 20%;
+		width: 50%;
+		/* Override for screens wider than 768px */
 	}
 }
