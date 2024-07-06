@@ -1,10 +1,10 @@
 "use client";
+import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Script from "next/script";
-import React, { useEffect } from "react";
 
-function page() {
+function Page() {
   useEffect(() => {
     // Cleanup function for when component unmounts or user navigates away
     const handleBeforeUnload = (e) => {
@@ -36,19 +36,12 @@ function page() {
       <link href="/css/bootstrap.css" rel="stylesheet" />
       <link href="/css/style.css" rel="stylesheet" />
       <link href="/css/responsive.css" rel="stylesheet" />
-
       <link href="/css/masterslider/style/masterslider.css" rel="stylesheet" />
       <link href="/css/masterslider/skins/default/style.css" rel="stylesheet" />
       <link
         href="/css/masterslider/style/ms-partialview.css"
         rel="stylesheet"
       />
-      {/* <link
-          rel="shortcut icon"
-          href="/images/favicon.png"
-          type="image/x-icon"
-        />
-        <link rel="icon" href="/images/joon/logo1.png" type="image/x-icon" /> */}
       {/* Responsive */}
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta
@@ -90,14 +83,10 @@ function page() {
         </section>
 
         <Footer />
-        {/* End Main Footer */}
       </div>
-      {/*End pagewrapper*/}
-      {/*Scroll to top*/}
       <div className="scroll-to-top scroll-to-target" data-target="html">
         <span className="fa fa-angle-up" />
       </div>
-      {/*Scroll to top*/}
       <Script src="/js/jquery.js"></Script>
       <Script src="/js/popper.min.js"></Script>
       <Script src="/js/jquery-ui.js"></Script>
@@ -116,4 +105,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
