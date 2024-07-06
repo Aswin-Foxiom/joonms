@@ -119,6 +119,7 @@ function Page() {
     setloading(true);
     const body = {
       token: token,
+      referral_id: referal_id,
       company_id: profile?.company?._id,
       plan_id: id,
       amount: totalAmount / 100,
