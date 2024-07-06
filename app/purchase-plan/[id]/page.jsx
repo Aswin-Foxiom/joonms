@@ -15,7 +15,7 @@ function Page() {
   // Renamed to start with an uppercase letter
 
   const params = useParams();
-  const [loading, setloading] = useState(false);
+  const [loading, setloading] = useState(true);
   const { user } = useContext(MyContext);
   const [planData, setplanData] = useState(null);
   const [profile, setprofile] = useState(null);
@@ -70,7 +70,10 @@ function Page() {
       setdiscount_percent(
         response?.data?.data?.profile?.company?.purchase_plan?.discount ?? 0
       );
-    } catch (error) {}
+    } catch (error) {
+      localStorage.clear();
+      window.location.href = "/";
+    }
   };
 
   const getPlanDetails = async () => {
@@ -80,7 +83,9 @@ function Page() {
       );
       setplanData(response?.data?.data ?? null);
     } catch (error) {
+      showToast("Sorry , something went wrong", false);
     } finally {
+      setloading(false);
     }
   };
 
@@ -136,7 +141,9 @@ function Page() {
         body,
         config // Include the config object here
       );
-      showToast("You Are Successfully Purchased your plan", true);
+      localStorage.setItem("ispurchase", true);
+      window.location.href = "/thank-you";
+      // showToast("You Are Successfully Purchased your plan", true);
     } catch (error) {
       showToast(
         error?.response?.data?.message ?? "Something went wrong",
@@ -255,7 +262,7 @@ function Page() {
                           </div>
                         </div>
                         <div
-                          class="sidebar-title"
+                          className="sidebar-title"
                           style={{ marginBottom: "15px" }}
                         >
                           <h2>About the plan</h2>
@@ -265,7 +272,7 @@ function Page() {
                         </p>
 
                         <div
-                          class="sidebar-title"
+                          className="sidebar-title"
                           style={{ marginBottom: "20px" }}
                         >
                           <h2>Services included in this plan</h2>
