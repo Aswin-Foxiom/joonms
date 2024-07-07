@@ -63,7 +63,7 @@ function Page() {
                   color: "black",
                 }}
               >
-                We are thrilled to have you on board. Your subscription to our
+                We are thrilled to have you on-board. Your subscription to our
                 business plan is now active, and you are one step closer to
                 managing your business more efficiently with our mobile App.
               </div>
