@@ -408,7 +408,8 @@ function Page() {
                             style={{ marginTop: "20px", textAlign: "right" }}
                           >
                             <StripeCheckout
-                              stripeKey="pk_test_51PF9MIRwgybEvRGE3uPBLqN1RiZY6TGLcabqHoJ8S4tNev0I2iJMnsL3f2mKdr8WF6E0OoJLZNl48hj8ie6Pk5NT002bYnIzbg"
+                              stripeKey="pk_live_51PF9MIRwgybEvRGEU2ZWhyHEZTfl5IA1ubbVPc6Lwt0TPVs7cupZt1i9KV3i3CfUqfRyqMal0LVVRVJSrifr8HEu00x3IQMDNU"
+                              // stripeKey="pk_test_51PF9MIRwgybEvRGE3uPBLqN1RiZY6TGLcabqHoJ8S4tNev0I2iJMnsL3f2mKdr8WF6E0OoJLZNl48hj8ie6Pk5NT002bYnIzbg"
                               amount={totalAmount}
                               currency="AED"
                               name="JoonMS Computer systems & Communication equipment software trading CO. L.L.C"
