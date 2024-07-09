@@ -101,6 +101,8 @@ function BannerSection() {
                       <img
                         src="images/main-slider/content-image-1.png"
                         alt=""
+                        className="lady-png"
+                        // style={{ paddingTop: "120px" }}
                       />
                     </div>
                     <div
