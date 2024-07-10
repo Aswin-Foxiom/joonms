@@ -4,6 +4,8 @@ import React from "react";
 function Page() {
   return (
     <div>
+      <link rel="icon" href="/images/joon/logo2.png" type="image/x-icon" />
+
       <link href="/css/bootstrap.css" rel="stylesheet" />
       <link href="/css/style.css" rel="stylesheet" />
       <link href="/css/responsive.css" rel="stylesheet" />

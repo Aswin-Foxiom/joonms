@@ -165,6 +165,8 @@ function Page() {
       <>
         <meta charSet="utf-8" />
         <title>JoonMs</title>
+        <link rel="icon" href="/images/joon/logo2.png" type="image/x-icon" />
+
         {/* Stylesheets */}
         <link href="/css/bootstrap.css" rel="stylesheet" />
         <link href="/css/style.css" rel="stylesheet" />

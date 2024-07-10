@@ -50,18 +50,23 @@ function Page() {
       <>
         <meta charSet="utf-8" />
         <title>JoonMs</title>
-        {/* Stylesheets */}
-        <link href="css/bootstrap.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
-        <link href="css/responsive.css" rel="stylesheet" />
+        <link rel="icon" href="/images/joon/logo2.png" type="image/x-icon" />
 
-        <link href="css/masterslider/style/masterslider.css" rel="stylesheet" />
+        {/* Stylesheets */}
+        <link href="/css/bootstrap.css" rel="stylesheet" />
+        <link href="/css/style.css" rel="stylesheet" />
+        <link href="/css/responsive.css" rel="stylesheet" />
+
         <link
-          href="css/masterslider/skins/default/style.css"
+          href="/css/masterslider/style/masterslider.css"
           rel="stylesheet"
         />
         <link
-          href="css/masterslider/style/ms-partialview.css"
+          href="/css/masterslider/skins/default/style.css"
+          rel="stylesheet"
+        />
+        <link
+          href="/css/masterslider/style/ms-partialview.css"
           rel="stylesheet"
         />
         {/* <link
