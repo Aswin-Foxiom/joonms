@@ -127,7 +127,7 @@ function Page() {
       referral_id: referal_id,
       company_id: profile?.company?._id,
       plan_id: id,
-      amount: totalAmount / 100,
+      amount: totalAmount,
     };
     const config = {
       headers: {
