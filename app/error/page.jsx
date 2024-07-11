@@ -68,7 +68,7 @@ function Page() {
                   color: "black",
                 }}
               >
-                We're sorry, but your payment could not be completed at this
+                We are sorry, but your payment could not be completed at this
                 time. Please check your payment details and try again. If the
                 issue persists, please contact our support team for assistance.
               </div>
