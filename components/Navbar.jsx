@@ -86,7 +86,7 @@ function Navbar() {
                 </div>
               </nav>
               <div className="option-box clearfix">
-                <div className="number-box">
+                <div className="number-box" style={{ marginRight: "12px" }}>
                   {userDetails ? (
                     <span className="phone">{`Hi , ${userDetails?.email}`}</span>
                   ) : (
@@ -139,7 +139,7 @@ function Navbar() {
               </li>
             </ul>
             <div className="social-links">
-              <div className="number-box">
+              <div className="number-box" style={{ marginRight: "12px" }}>
                 {userDetails ? (
                   <span
                     style={{ color: "#FFE000" }}

@@ -8,6 +8,7 @@ import MyContext from "../context/Context";
 import { useFormik } from "formik";
 import { loginValidationSchema } from "../utils/validation";
 import { showToast } from "../utils/Toast";
+import { BaseUrl } from "../utils/BaseUrl";
 
 function Page() {
   // Changed here
@@ -31,10 +32,7 @@ function Page() {
   const Login = async (loginData) => {
     setLoading(true);
     try {
-      const response = await axios.post(
-        "https://server.joonms.com/users/login",
-        loginData
-      );
+      const response = await axios.post(`${BaseUrl}/users/login`, loginData);
       console.log(response);
       localStorage.setItem("token", response?.data?.data?.token);
       window.location.href = "/";
@@ -167,7 +165,10 @@ function Page() {
                             />
                             {formik.touched.username &&
                             formik.errors.username ? (
-                              <span className="text-danger text-small pl-10">
+                              <span
+                                className="text-danger text-small pl-10"
+                                style={{ marginLeft: "20px" }}
+                              >
                                 {formik.errors.username}
                               </span>
                             ) : null}
@@ -200,7 +201,10 @@ function Page() {
                             </div>
                             {formik.touched.password &&
                             formik.errors.password ? (
-                              <span className="text-danger text-small pl-10">
+                              <span
+                                className="text-danger text-small pl-10"
+                                style={{ marginLeft: "20px" }}
+                              >
                                 {formik.errors.password}
                               </span>
                             ) : null}
@@ -219,7 +223,10 @@ function Page() {
 
                             {formik.touched.company_id &&
                             formik.errors.company_id ? (
-                              <span className="text-danger text-small pl-10">
+                              <span
+                                className="text-danger text-small pl-10"
+                                style={{ marginLeft: "20px" }}
+                              >
                                 {formik.errors.company_id}
                               </span>
                             ) : null}

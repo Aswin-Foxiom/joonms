@@ -2,6 +2,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Carousel } from "primereact/carousel";
+import { BaseUrl } from "@/app/utils/BaseUrl";
+
 const responsiveOptions = [
   {
     breakpoint: "1400px",
@@ -41,7 +43,10 @@ function PricingSection() {
           <div className="line-one" />
           <div className="line-two" />
           <div className="icon-box">
-            <span className="icon fas fa-credit-card" />
+            <span
+              className="icon fas fa-credit-card"
+              style={{ fontSize: "45px" }}
+            />
           </div>
 
           <h3>{product?.name}</h3>
@@ -80,7 +85,7 @@ function PricingSection() {
   useEffect(() => {
     // Replace the URL with the API endpoint you want to fetch data from
     axios
-      .get("https://server.joonms.com/subscriptions")
+      .get(`${BaseUrl}/subscriptions`)
       .then((response) => {
         console.log("THE RESPONSE IS", response?.data?.data?.docs);
         setPricingData(response?.data?.data?.docs ?? []);

@@ -12364,3 +12364,21 @@ img {
 		padding-top: 120px;
 	}
 }
+
+
+
+
+
+.payment-image {
+	height: 80%;
+	width: 80%;
+	/* Default padding for all screens */
+}
+
+@media (min-width: 768px) {
+	.payment-image {
+		height: 20%;
+		width: 50%;
+		/* Override for screens wider than 768px */
+	}
+}
