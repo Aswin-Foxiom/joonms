@@ -56,10 +56,7 @@ function Page() {
         <section className="banner-section-four thank-you-padding">
           <div className="auto-container">
             <div className="content-box">
-              <h2 style={{ color: "red" }}>
-                {" "}
-                Your Payment Was Not Processed !
-              </h2>
+              <h2 style={{ color: "red" }}>Your Payment Was Not Processed !</h2>
               <div
                 className="text"
                 style={{
