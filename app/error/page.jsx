@@ -9,7 +9,7 @@ function Page() {
     // Cleanup function for when component unmounts or user navigates away
     const handleBeforeUnload = (e) => {
       // Remove "ispurchase" from localStorage
-      localStorage.removeItem("ispurchase");
+      localStorage.removeItem("iserror");
     };
 
     // Add event listener for beforeunload
@@ -23,7 +23,7 @@ function Page() {
 
   // Redirect logic when "ispurchase" is not found in localStorage
   useEffect(() => {
-    if (!localStorage.getItem("ispurchase")) {
+    if (!localStorage.getItem("iserror")) {
       window.location.href = "/"; // Redirect to home if "ispurchase" is not found
     }
   }, []);
@@ -56,7 +56,10 @@ function Page() {
         <section className="banner-section-four thank-you-padding">
           <div className="auto-container">
             <div className="content-box">
-              <h2>Thank You for Your Purchase!</h2>
+              <h2 style={{ color: "red" }}>
+                {" "}
+                Your Payment Was Not Processed !
+              </h2>
               <div
                 className="text"
                 style={{
@@ -65,9 +68,9 @@ function Page() {
                   color: "black",
                 }}
               >
-                We are thrilled to have you on-board. Your subscription to our
-                business plan is now active, and you are one step closer to
-                managing your business more efficiently.
+                We're sorry, but your payment could not be completed at this
+                time. Please check your payment details and try again. If the
+                issue persists, please contact our support team for assistance.
               </div>
 
               <a href="/" className="theme-btn btn-style-fourteen">
@@ -76,9 +79,9 @@ function Page() {
             </div>
             <div className="image">
               <img
-                src="/images/gallery/thankyou.png"
+                src="/images/gallery/paymenterror.png"
                 alt=""
-                className="thank-image"
+                className="payment-image"
               />
             </div>
           </div>

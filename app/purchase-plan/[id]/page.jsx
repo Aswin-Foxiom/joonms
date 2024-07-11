@@ -9,7 +9,7 @@ import Script from "next/script";
 import React, { useContext, useEffect, useState } from "react";
 import StripeCheckout from "react-stripe-checkout";
 import { BlockUI } from "primereact/blockui";
-import { Chip } from "primereact/chip";
+import { BaseUrl } from "@/app/utils/BaseUrl";
 
 function Page() {
   // Renamed to start with an uppercase letter
@@ -22,6 +22,7 @@ function Page() {
   const [referal_id, setreferal_id] = useState("");
   const [totalAmount, settotalAmount] = useState(0);
   const [discount_percent, setdiscount_percent] = useState(0);
+  const [dataEligibility, setdataEligibility] = useState(null);
   const { id } = params;
 
   const calculateAmount = () => {
@@ -49,6 +50,10 @@ function Page() {
   }, [id]); // Added dependency array
 
   useEffect(() => {
+    checkPurchaseStatus();
+  }, []);
+
+  useEffect(() => {
     settotalAmount(calculateAmount());
   }, [planData, discount_percent]);
 
@@ -60,10 +65,7 @@ function Page() {
         },
       };
 
-      const response = await axios.get(
-        `https://server.joonms.com/users/profile`,
-        config
-      );
+      const response = await axios.get(`${BaseUrl}/users/profile`, config);
 
       setprofile(response?.data?.data?.profile);
 
@@ -78,14 +80,29 @@ function Page() {
 
   const getPlanDetails = async () => {
     try {
-      const response = await axios.get(
-        `https://server.joonms.com/subscriptions/${id}`
-      );
+      const response = await axios.get(`${BaseUrl}/subscriptions/${id}`);
       setplanData(response?.data?.data ?? null);
     } catch (error) {
       showToast("Sorry , something went wrong", false);
     } finally {
       setloading(false);
+    }
+  };
+
+  const checkPurchaseStatus = async () => {
+    const response = await axios.post(
+      `${BaseUrl}/purchase/check-eligible`,
+      {
+        plan_id: id,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`, // Attach token here
+        },
+      }
+    );
+    if (response?.status) {
+      setdataEligibility(response?.data);
     }
   };
 
@@ -107,7 +124,7 @@ function Page() {
   //   };
   //   try {
   //     const response = await axios.post(
-  //       `https://server.joonms.com/purchase/plan`,
+  //       `${BaseUrl}/purchase/plan`,
   //       data,
   //       config
   //     );
@@ -137,7 +154,7 @@ function Page() {
 
     try {
       const response = await axios.post(
-        `https://server.joonms.com/purchase/plan`,
+        `${BaseUrl}/purchase/plan`,
         body,
         config // Include the config object here
       );
@@ -145,10 +162,12 @@ function Page() {
       window.location.href = "/thank-you";
       // showToast("You Are Successfully Purchased your plan", true);
     } catch (error) {
-      showToast(
-        error?.response?.data?.message ?? "Something went wrong",
-        false
-      );
+      // showToast(
+      //   error?.response?.data?.message ?? "Something went wrong",
+      //   false
+      // );
+      localStorage.setItem("iserror", true);
+      window.location.href = "/error";
     } finally {
       setloading(false);
     }
@@ -407,25 +426,32 @@ function Page() {
                           {/*Place Order*/}
                           <div
                             className="place-order"
-                            style={{ marginTop: "20px", textAlign: "right" }}
+                            style={{
+                              marginTop: "20px",
+                              textAlign: `${
+                                dataEligibility?.eligible ? "right" : "left"
+                              }`,
+                            }}
                           >
-                            <StripeCheckout
-                              stripeKey="pk_live_51PF9MIRwgybEvRGEU2ZWhyHEZTfl5IA1ubbVPc6Lwt0TPVs7cupZt1i9KV3i3CfUqfRyqMal0LVVRVJSrifr8HEu00x3IQMDNU"
-                              // stripeKey="pk_test_51PF9MIRwgybEvRGE3uPBLqN1RiZY6TGLcabqHoJ8S4tNev0I2iJMnsL3f2mKdr8WF6E0OoJLZNl48hj8ie6Pk5NT002bYnIzbg"
-                              amount={totalAmount}
-                              currency="AED"
-                              name="JoonMS Computer systems & Communication equipment software trading CO. L.L.C"
-                              token={makePayment}
-                              className="theme-btn order-btn"
-                            />
-
-                            {/* <button
-                              type="button"
-                              className="theme-btn order-btn"
-                            >
-                              Purchase Now
-                            </button> */}
+                            {dataEligibility?.eligible ? (
+                              <StripeCheckout
+                                stripeKey="pk_live_51PF9MIRwgybEvRGEU2ZWhyHEZTfl5IA1ubbVPc6Lwt0TPVs7cupZt1i9KV3i3CfUqfRyqMal0LVVRVJSrifr8HEu00x3IQMDNU"
+                                // stripeKey="pk_test_51PF9MIRwgybEvRGE3uPBLqN1RiZY6TGLcabqHoJ8S4tNev0I2iJMnsL3f2mKdr8WF6E0OoJLZNl48hj8ie6Pk5NT002bYnIzbg"
+                                amount={totalAmount}
+                                currency="AED"
+                                name="JoonMS Computer systems & Communication equipment software trading CO. L.L.C"
+                                token={makePayment}
+                                className="theme-btn order-btn"
+                              />
+                            ) : (
+                              <span
+                                style={{ color: "red", fontWeight: "bold" }}
+                              >
+                                {dataEligibility?.message}
+                              </span>
+                            )}
                           </div>
+
                           {/*End Place Order*/}
                         </div>
                       </div>
@@ -444,7 +470,7 @@ function Page() {
           <span className="fa fa-angle-up" />
         </div>
 
-        <Script src="/js/jquery.js"></Script>
+        {/* <Script src="/js/jquery.js"></Script>
         <Script src="/js/popper.min.js"></Script>
         <Script src="/js/jquery-ui.js"></Script>
         <Script src="/js/bootstrap.min.js"></Script>
@@ -457,7 +483,7 @@ function Page() {
         <Script src="/js/parallax.min.js"></Script>
         <Script src="/js/wow.js"></Script>
         <Script src="/js/appear.js"></Script>
-        <Script src="/js/script.js"></Script>
+        <Script src="/js/script.js"></Script> */}
       </>
     </BlockUI>
   );
