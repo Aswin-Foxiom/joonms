@@ -98,7 +98,7 @@ function Footer() {
                     </div>
                   </div>
 
-                  <div className="footer-column col-lg-7 col-md-6 col-sm-12">
+                  {/* <div className="footer-column col-lg-7 col-md-6 col-sm-12">
                     <div className="footer-widget subscribe-widget">
                       <h2>Get weekly update</h2>
 
@@ -120,6 +120,25 @@ function Footer() {
                             </button>
                           </div>
                         </form>
+                      </div>
+                    </div>
+                  </div> */}
+
+                  <div className="footer-column col-lg-7 col-md-6 col-sm-12">
+                    <div className="footer-widget subscribe-widget">
+                      <h2>Links</h2>
+
+                      <div className="widget-content">
+                        <ul className="list">
+                          <li>
+                            <a
+                              target="_blank"
+                              href="https://firebasestorage.googleapis.com/v0/b/joonms.appspot.com/o/Privacy%20policy%20July%202024.pdf?alt=media&token=ec10ec7f-65a4-4d2e-a1bf-430a09a5d0c9"
+                            >
+                              Privacy & Policy{" "}
+                            </a>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </div>
