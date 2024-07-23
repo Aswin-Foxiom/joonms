@@ -48,13 +48,14 @@ function Page() {
                 <div className="text">
                   <h3>1. Introduction</h3>
                   <p>
-                    JoonMS Computer Systems & Communication Equipment Software
-                    Trading Co LLC ("Company", "We", "Us", or "Our") is
+                    JoonMS Computer Systems &amp; Communication Equipment
+                    Software Trading Co LLC (&quot;Company&quot;,
+                    &quot;We&quot;, &quot;Us&quot;, or &quot;Our&quot;) is
                     committed to protecting your privacy. This Privacy Policy
                     explains how we collect, use, and disclose your personal
                     information when you use our mobile application, JoonMS
-                    ("Application"), and our services ("Services"), including
-                    hardware sales.
+                    (&quot;Application&quot;), and our services
+                    (&quot;Services&quot;), including hardware sales.
                   </p>
                   <h3>2. Data Collection and Usage</h3>
                   <h4>
@@ -122,7 +123,7 @@ function Page() {
                     IT laws governing data privacy and security. We reserve the
                     right to transfer data to government authorities upon proper
                     submission through legal and official channels as per the
-                    country's governing laws.
+                    country&#39;s governing laws.
                   </p>
                   <h3>4. Data Security</h3>
                   <p>
@@ -215,76 +216,56 @@ function Page() {
                   <div className="row clearfix mt-3 ml-4">
                     <ul className="list-style-four">
                       <li>
-                        <b>Automated Harassment:</b> Using AI to harass, bully,
-                        or intimidate individuals or groups is strictly
-                        forbidden.
+                        <b>Deepfakes:</b> Creating or sharing deepfake content
+                        that manipulates images, audio, or video to deceive or
+                        mislead viewers is strictly prohibited.
                       </li>
                       <li>
-                        <b>Deepfakes and Manipulated Media:</b> Creating and
-                        distributing manipulated media (e.g., deepfakes)
-                        intended to deceive or mislead viewers is not allowed.
+                        <b>Automated Harassment:</b> Using AI to automate the
+                        harassment or abuse of individuals, including through
+                        automated messages or comments, is not allowed.
                       </li>
                       <li>
-                        <b>Unauthorized Data Collection:</b> Using AI to collect
-                        personal data from users without their explicit consent
-                        is prohibited.
+                        <b>Unauthorized Data Collection: </b> Using AI to
+                        collect, store, or analyze data from our users without
+                        their explicit consent is strictly prohibited.
+                      </li>
+                      <li>
+                        <b>Manipulation: </b> Using AI to manipulate or deceive
+                        users, including through fake profiles, reviews, or
+                        interactions, is not allowed.
                       </li>
                     </ul>
                   </div>
-                  <h3>7. Hardware Sales</h3>
-                  <h4>
-                    <b>7.1 Order Processing and Fulfillment</b>
-                  </h4>
+                  <h4>Enforcement:</h4>
                   <div className="row clearfix mt-3 ml-4">
                     <ul className="list-style-four">
                       <li>
-                        <b>Order Information:</b> When you purchase hardware
-                        from us, we collect the necessary information to process
-                        your order, including your name, shipping address,
-                        billing address, and payment information.
+                        <b>Violation Consequences:</b> Users found to be in
+                        violation of this Prohibited AI Content and Activities
+                        Policy will be subject to account suspension or
+                        termination.
                       </li>
                       <li>
-                        <b>Shipping and Delivery:</b> We use the provided
-                        information to ship your order to the specified address
-                        and to communicate with you about your order status.
+                        <b>Reporting and Moderation: </b> We encourage users to
+                        report any suspected violations of this policy. Our
+                        moderation team reviews reports and takes appropriate
+                        action to enforce this policy.
                       </li>
                     </ul>
                   </div>
-                  <h4>
-                    <b>7.2 Warranty and Support</b>
-                  </h4>
-                  <div className="row clearfix mt-3 ml-4">
-                    <ul className="list-style-four">
-                      <li>
-                        <b>Warranty Information:</b> Information related to the
-                        warranty of your purchased hardware is recorded and
-                        maintained to provide support and service as needed.
-                      </li>
-                      <li>
-                        <b>Customer Support:</b> We may collect additional
-                        information from you when you contact customer support
-                        to resolve any issues or inquiries related to your
-                        hardware purchase.
-                      </li>
-                    </ul>
-                  </div>
-                  <h3>8. Your Rights</h3>
+                  <h3>7. Changes to This Privacy Policy</h3>
                   <p>
-                    You have the right to access, correct, or delete your
-                    personal data. You can manage your information through your
-                    account settings or by contacting us directly.
-                  </p>
-                  <h3>9. Changes to This Privacy Policy</h3>
-                  <p>
-                    We may update our Privacy Policy from time to time. Any
+                    We may update this Privacy Policy from time to time. Any
                     changes will be posted on this page with an updated
-                    effective date.
+                    effective date. We encourage you to review this Privacy
+                    Policy periodically.
                   </p>
-                  <h3>10. Contact Us</h3>
+                  <h3>8. Contact Us</h3>
                   <p>
-                    If you have any questions or concerns about this Privacy
-                    Policy, please contact us at
-                    <a href="mailto:info@joonms.com"> info@joonms.com</a>.
+                    If you have any questions about this Privacy Policy, please
+                    contact us at{" "}
+                    <a href="mailto:info@joonms.com">info@joonms.com</a>
                   </p>
                 </div>
               </div>
@@ -292,24 +273,6 @@ function Page() {
           </div>
         </section>
       </div>
-
-      <div className="scroll-to-top scroll-to-target" data-target="html">
-        <span className="fa fa-angle-up" />
-      </div>
-      <Script src="/js/jquery.js"></Script>
-      <Script src="/js/popper.min.js"></Script>
-      <Script src="/js/jquery-ui.js"></Script>
-      <Script src="/js/bootstrap.min.js"></Script>
-      <Script src="/js/jquery.paroller.min.js"></Script>
-      <Script src="/js/jquery.easing.min.js"></Script>
-      <Script src="/js/masterslider.js"></Script>
-      <Script src="/js/jquery.fancybox.js"></Script>
-      <Script src="/js/owl.js"></Script>
-      <Script src="/js/element-in-view.js"></Script>
-      <Script src="/js/parallax.min.js"></Script>
-      <Script src="/js/wow.js"></Script>
-      <Script src="/js/appear.js"></Script>
-      <Script src="/js/script.js"></Script>
     </div>
   );
 }
