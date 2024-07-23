@@ -1,6 +1,66 @@
 import React from "react";
-
+import { Dock } from "primereact/dock";
+import "./DockDemo.css";
 function Footer() {
+  const items = [
+    {
+      label: "Facebook",
+      icon: () => (
+        <span
+          style={{ fontSize: "25px", color: "black" }}
+          className="fab fa-facebook-f"
+        />
+      ),
+      command: () => {
+        window.open("#", "_blank");
+      },
+    },
+    {
+      label: "Linked In",
+      icon: () => (
+        <span
+          style={{ fontSize: "25px", color: "black" }}
+          className="fab fa-linkedin-in"
+        />
+      ),
+      command: () => {
+        window.open("#", "_blank");
+      },
+    },
+    {
+      label: "Twitter",
+      icon: () => (
+        <span style={{ fontSize: "25px", color: "black" }}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            width="22" // Adjust the size as needed
+            height="17" // Adjust the size as needed
+          >
+            <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+          </svg>
+        </span>
+      ),
+      command: () => {
+        window.open("#", "_blank");
+      },
+    },
+    {
+      label: "Finder",
+      icon: () => (
+        <span
+          style={{ fontSize: "25px", color: "black" }}
+          className="fab fa-whatsapp"
+        />
+      ),
+      command: () => {
+        window.open(
+          "https://api.whatsapp.com/send?phone=971505408757&text=Hello",
+          "_blank"
+        );
+      },
+    },
+  ];
   return (
     <div id="where">
       <footer className="main-footer">
@@ -46,11 +106,11 @@ function Footer() {
                             {/* <span className="fa square-x-twitter" /> */}
                           </a>
                         </li>
-                        <li>
+                        {/* <li>
                           <a href="#">
                             <span className="fab fa-google-plus-g" />
                           </a>
-                        </li>
+                        </li> */}
                       </ul>
                     </div>
                   </div>
@@ -68,7 +128,7 @@ function Footer() {
                             <a href="mailto:info@joonms.com">Info@joonms.com</a>
                           </li>
                           <li>
-                            <a href="tel:720-661-2231">+97 150 540 8757</a>
+                            <a href="tel:+97 150 540 8757">+97 150 540 8757</a>
                           </li>
                         </ul>
                       </div>
@@ -133,7 +193,8 @@ function Footer() {
                           <li>
                             <a
                               target="_blank"
-                              href="https://firebasestorage.googleapis.com/v0/b/joonms.appspot.com/o/Privacy%20policy%20July%202024.pdf?alt=media&token=ec10ec7f-65a4-4d2e-a1bf-430a09a5d0c9"
+                              // href="https://firebasestorage.googleapis.com/v0/b/joonms.appspot.com/o/Privacy%20policy%20July%202024.pdf?alt=media&token=ec10ec7f-65a4-4d2e-a1bf-430a09a5d0c9"
+                              href="/privacy-policy"
                             >
                               Privacy & Policy{" "}
                             </a>
@@ -173,6 +234,9 @@ function Footer() {
           </div>
         </div>
       </footer>
+      <Dock className="fixed-dock" model={items} position="right">
+        {" "}
+      </Dock>
     </div>
   );
 }
