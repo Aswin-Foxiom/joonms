@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Dock } from "primereact/dock";
 import "./DockDemo.css";
 function Footer() {
-  const [position, setPosition] = useState("right");
   const items = [
     {
       label: "Facebook",
@@ -235,7 +234,7 @@ function Footer() {
           </div>
         </div>
       </footer>
-      <Dock className="fixed-dock" model={items} position={position}>
+      <Dock className="fixed-dock" model={items} position="right">
         {" "}
       </Dock>
     </div>
