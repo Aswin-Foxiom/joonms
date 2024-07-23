@@ -123,7 +123,7 @@ function Page() {
                     IT laws governing data privacy and security. We reserve the
                     right to transfer data to government authorities upon proper
                     submission through legal and official channels as per the
-                    country's governing laws.
+                    country&#39;s governing laws.
                   </p>
                   <h3>4. Data Security</h3>
                   <p>
