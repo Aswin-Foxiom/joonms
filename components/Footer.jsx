@@ -12,7 +12,10 @@ function Footer() {
         />
       ),
       command: () => {
-        window.open("#", "_blank");
+        window.open(
+          "https://www.facebook.com/profile.php?id=61562775265645",
+          "_blank"
+        );
       },
     },
     {
@@ -24,7 +27,10 @@ function Footer() {
         />
       ),
       command: () => {
-        window.open("#", "_blank");
+        window.open(
+          "https://www.linkedin.com/company/joonms/mycompany/?viewAsMember=true",
+          "_blank"
+        );
       },
     },
     {
@@ -42,7 +48,7 @@ function Footer() {
         </span>
       ),
       command: () => {
-        window.open("#", "_blank");
+        window.open("https://x.com/JoonMSCaFM_ERP", "_blank");
       },
     },
     {
@@ -81,17 +87,26 @@ function Footer() {
 
                       <ul className="social-icon-one">
                         <li>
-                          <a href="#">
+                          <a
+                            href="https://www.facebook.com/profile.php?id=61562775265645"
+                            target="_blank"
+                          >
                             <span className="fab fa-facebook-f" />
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a
+                            href="https://www.linkedin.com/company/joonms/mycompany/?viewAsMember=true"
+                            target="_blank"
+                          >
                             <span className="fab fa-linkedin-in" />
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a
+                            href="https://x.com/JoonMSCaFM_ERP"
+                            target="_blank"
+                          >
                             <span>
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
