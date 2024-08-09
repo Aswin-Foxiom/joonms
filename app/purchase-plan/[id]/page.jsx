@@ -160,12 +160,10 @@ function Page() {
       );
       localStorage.setItem("ispurchase", true);
       window.location.href = "/thank-you";
-      // showToast("You Are Successfully Purchased your plan", true);
+      console.log(response);
     } catch (error) {
-      // showToast(
-      //   error?.response?.data?.message ?? "Something went wrong",
-      //   false
-      // );
+      console.log(error?.response?.data?.message);
+      localStorage.setItem("error", error?.response?.data?.message ?? "");
       localStorage.setItem("iserror", true);
       window.location.href = "/error";
     } finally {

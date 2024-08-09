@@ -1,15 +1,24 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Script from "next/script";
 
 function Page() {
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const errorReason = localStorage.getItem("error");
+      setError(errorReason);
+    }
+  }, []);
   useEffect(() => {
     // Cleanup function for when component unmounts or user navigates away
     const handleBeforeUnload = (e) => {
       // Remove "ispurchase" from localStorage
       localStorage.removeItem("iserror");
+      localStorage.removeItem("error");
     };
 
     // Add event listener for beforeunload
@@ -56,7 +65,7 @@ function Page() {
         <section className="banner-section-four thank-you-padding">
           <div className="auto-container">
             <div className="content-box">
-              <h2 style={{ color: "red" }}>Your Payment Was Not Processed !</h2>
+              <h2 style={{ color: "red" }}>Your Payment Was Not Processed!</h2>
               <div
                 className="text"
                 style={{
@@ -66,8 +75,16 @@ function Page() {
                 }}
               >
                 We are sorry, but your payment could not be completed at this
-                time. Please check your payment details and try again. If the
-                issue persists, please contact our support team for assistance.
+                time
+                {error ? (
+                  <>
+                    <b style={{ color: "red" }}>, by the reason {error}</b>
+                  </>
+                ) : (
+                  "."
+                )}{" "}
+                Please check your payment details and try again. If the issue
+                persists, please contact our support team for assistance.
               </div>
 
               <a href="/" className="theme-btn btn-style-fourteen">
