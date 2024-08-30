@@ -30,10 +30,14 @@ function Navbar() {
   };
 
   const onDashboardClicked = () => {
-    window.open(
-      `https://joonadmin.web.app/login?token=${localStorage.getItem("token")}`,
-      "_blank"
-    );
+    if (localStorage.getItem("token")) {
+      window.open(
+        `https://joonadmin.web.app/login?token=${localStorage.getItem(
+          "token"
+        )}`,
+        "_blank"
+      );
+    }
   };
 
   return (
