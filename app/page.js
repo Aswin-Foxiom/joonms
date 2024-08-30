@@ -13,41 +13,41 @@ import { jwtDecode } from "jwt-decode";
 import { showToast } from "./utils/Toast";
 
 export default function Page() {
-  useEffect(() => {
-    // Check if the welcome message has been shown before
-    const hasVisited = localStorage.getItem("hasVisited");
-    if (!hasVisited) {
-      const token = localStorage.getItem("token");
-      try {
-        const decoded = token ? jwtDecode(token) : null;
-        if (decoded) {
-          showToast(`Welcome back! You're logged in now.`, true);
+  // useEffect(() => {
+  //   // Check if the welcome message has been shown before
+  //   const hasVisited = localStorage.getItem("hasVisited");
+  //   if (!hasVisited) {
+  //     const token = localStorage.getItem("token");
+  //     try {
+  //       const decoded = token ? jwtDecode(token) : null;
+  //       if (decoded) {
+  //         showToast(`Welcome back! You're logged in now.`, true);
 
-          setTimeout(() => {
-            // Call your function here
-            localStorage.setItem("hasVisited", "true");
-          }, 2000); // 2000 milliseconds = 2 seconds
-        }
-      } catch (error) {
-        localStorage.clear(); // Clear localStorage in case of decoding error
-        // Alternatively, if you want to remove specific items:
-        // localStorage.removeItem('token');
-      }
-    }
+  //         setTimeout(() => {
+  //           // Call your function here
+  //           localStorage.setItem("hasVisited", "true");
+  //         }, 2000); // 2000 milliseconds = 2 seconds
+  //       }
+  //     } catch (error) {
+  //       localStorage.clear(); // Clear localStorage in case of decoding error
+  //       // Alternatively, if you want to remove specific items:
+  //       // localStorage.removeItem('token');
+  //     }
+  //   }
 
-    // Function to clear localStorage item on page unload
-    const handleBeforeUnload = () => {
-      localStorage.removeItem("hasVisited");
-    };
+  //   // Function to clear localStorage item on page unload
+  //   const handleBeforeUnload = () => {
+  //     localStorage.removeItem("hasVisited");
+  //   };
 
-    // Add event listener for beforeunload
-    window.addEventListener("beforeunload", handleBeforeUnload);
+  //   // Add event listener for beforeunload
+  //   window.addEventListener("beforeunload", handleBeforeUnload);
 
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
-  }, []);
+  //   // Cleanup the event listener on component unmount
+  //   return () => {
+  //     window.removeEventListener("beforeunload", handleBeforeUnload);
+  //   };
+  // }, []);
 
   // const Payment_Function = async () => {
   //   var data = {

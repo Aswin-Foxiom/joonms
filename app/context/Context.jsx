@@ -12,34 +12,63 @@ export const MyProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [userDetails, setuserDetails] = useState(null);
 
-  useEffect(async () => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      // try {
-      //   console.log("Start to decode");
-      //   const decoded = jwtDecode(token);
-      //   console.log("Decoded", decoded);
-      //   setUser(decoded?.id ?? null);
-      //   setuserDetails(decoded);
-      // } catch (error) {
-      //   localStorage.clear();
-      // }
-      const config = {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      };
-      const response = await axios.get(`${BaseUrl}/users/profile`, config);
-      if (response?.data?.data?.profile) {
-        const decoded = jwtDecode(token);
-        setUser(decoded?.id ?? null);
-        setuserDetails(decoded);
-      } else {
-        localStorage.clear();
-        window.location.reload();
+  // useEffect(async () => {
+  //   const token = localStorage.getItem("token");
+  //   if (token) {
+  //     // try {
+  //     //   console.log("Start to decode");
+  //     //   const decoded = jwtDecode(token);
+  //     //   console.log("Decoded", decoded);
+  //     //   setUser(decoded?.id ?? null);
+  //     //   setuserDetails(decoded);
+  //     // } catch (error) {
+  //     //   localStorage.clear();
+  //     // }
+  //     const config = {
+  //       headers: {
+  //         Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //       },
+  //     };
+  //     const response = await axios.get(`${BaseUrl}/users/profile`, config);
+  //     if (response?.data?.data?.profile) {
+  //       const decoded = jwtDecode(token);
+  //       setUser(decoded?.id ?? null);
+  //       setuserDetails(decoded);
+  //     } else {
+  //       localStorage.clear();
+  //       window.location.reload();
+  //     }
+  //   }
+  // }, []);
+
+  useEffect(() => {
+    const fetchUserDetails = async () => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        try {
+          const config = {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          };
+          const response = await axios.get(`${BaseUrl}/users/profile`, config);
+          if (response?.data?.data?.profile) {
+            const decoded = jwtDecode(token);
+            setUser(decoded?.id ?? null);
+            setuserDetails(decoded);
+          } else {
+            localStorage.clear();
+            window.location.reload();
+          }
+        } catch (error) {
+          localStorage.clear();
+          window.location.reload();
+        }
       }
-    }
-  }, []);
+    };
+
+    fetchUserDetails();
+  }, []); // Add an empty dependency array to run the effect only once
 
   return (
     <MyContext.Provider value={{ user, setUser, userDetails, setuserDetails }}>
