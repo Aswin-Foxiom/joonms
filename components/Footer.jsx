@@ -69,7 +69,7 @@ function Footer() {
   ];
   return (
     <div id="where">
-      <footer className="main-footer">
+      <footer className="main-footer" style={{ paddingBottom: "50px" }}>
         <div className="auto-container">
           <div
             className="widgets-section wow fadeInUp"
