@@ -134,7 +134,7 @@ export default function Page() {
 
           <AboutUsSection />
 
-          {/* <PricingSection /> */}
+          <PricingSection />
 
           <TestimonialSection />
 
