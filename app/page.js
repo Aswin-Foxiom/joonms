@@ -134,11 +134,11 @@ export default function Page() {
 
           <AboutUsSection />
 
-          <PricingSection />
+          {/* <PricingSection /> */}
 
           <TestimonialSection />
 
-          {/* <PricingSection /> */}
+          <PricingSection />
 
           {/* <NewsSection /> */}
 
