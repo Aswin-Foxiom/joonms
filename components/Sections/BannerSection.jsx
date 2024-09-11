@@ -75,10 +75,10 @@ function BannerSection() {
                       </div>
                       <div className="link-box">
                         <a
-                          href="/#services"
+                          href="/#app-section"
                           className="theme-btn btn-style-two"
                         >
-                          <span className="txt">More About</span>
+                          <span className="txt">Get Our App</span>
                         </a>
                         {/* <a
                           href="https://www.youtube.com/watch?v=SXZXtD60t2g"

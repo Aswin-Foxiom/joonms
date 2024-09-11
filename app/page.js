@@ -11,6 +11,7 @@ import TestimonialSection from "@/components/Sections/TestimonialSection";
 import PricingSection from "@/components/Sections/PricingSection";
 import { jwtDecode } from "jwt-decode";
 import { showToast } from "./utils/Toast";
+import AppSection from "@/components/Sections/AppSection";
 
 export default function Page() {
   // useEffect(() => {
@@ -139,6 +140,7 @@ export default function Page() {
           <TestimonialSection />
 
           <PricingSection />
+          <AppSection />
 
           {/* <NewsSection /> */}
 

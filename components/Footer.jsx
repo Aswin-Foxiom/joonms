@@ -74,6 +74,7 @@ function Footer() {
           <div
             className="widgets-section wow fadeInUp"
             data-wow-delay="0ms"
+            style={{ padding: 0 }}
             data-wow-duration="1500ms"
           >
             <div className="row clearfix">
