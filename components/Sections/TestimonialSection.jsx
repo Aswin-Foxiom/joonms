@@ -34,14 +34,10 @@ function TestimonialSection() {
               <div className="inner-column">
                 <div className="sec-title">
                   <h2>Who we Are </h2>
-                  {/* <div className="text">
-                    Check what&rsquo;s our client say about us!
-                  </div> */}
                 </div>
                 <div className="testimonial-carousel owl-carousel owl-theme">
                   <div className="testimonial-block">
                     <div className="inner-box">
-                      {/* <div className="quote-icon flaticon-quote-2" /> */}
                       <div className="text">
                         Welcome to Joon, a globally recognized conglomerate,
                         proudly serving as the sister concern to numerous
@@ -55,14 +51,11 @@ function TestimonialSection() {
                         service has propelled us to the forefront of the global
                         market.
                       </div>
-                      {/* <div className="author">- Raisa Moni</div>
-                      <div className="designation">Envato Customer</div> */}
                     </div>
                   </div>
 
                   <div className="testimonial-block">
                     <div className="inner-box">
-                      {/* <div className="quote-icon flaticon-quote-2" /> */}
                       <div className="text">
                         At Joon, we are not only dedicated to business success
                         but also to making a positive impact on society. We
@@ -76,14 +69,11 @@ function TestimonialSection() {
                         for parents, ensuring they have the necessary tools and
                         knowledge to support their childs development.
                       </div>
-                      {/* <div className="author">- Raisa Moni</div>
-                      <div className="designation">Envato Customer</div> */}
                     </div>
                   </div>
 
                   <div className="testimonial-block">
                     <div className="inner-box">
-                      {/* <div className="quote-icon flaticon-quote-2" /> */}
                       <div className="text">
                         Our client work environment is characterized by a
                         culture of innovation, creativity, and collaboration,
@@ -95,8 +85,6 @@ function TestimonialSection() {
                         meaningful difference in the lives of individuals and
                         communities around the world.
                       </div>
-                      {/* <div className="author">- Raisa Moni</div>
-                      <div className="designation">Envato Customer</div> */}
                     </div>
                   </div>
                 </div>
