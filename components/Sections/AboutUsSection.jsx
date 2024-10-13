@@ -80,10 +80,7 @@ function AboutUsSection() {
                         long-term thinking, and innovation. We pride ourselves
                         on making it easy for users to connect with our team,
                         and this strong customer support has been a key factor
-                        in our clients' success and growth. As we continue to
-                        expand, we aim to provide an all-encompassing solution
-                        that evolves from CaFM basics into a software suite
-                        capable of replacing ERP systems for any business.
+                        in our clients&apos; success and growth.
                       </div>
                     </div>
                   </div>
