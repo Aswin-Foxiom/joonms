@@ -76,7 +76,12 @@ function PricingSection() {
           </a>
         </div>
       </div> */}
-        <div className="price-block style-two" style={{ position: "relative" }}>
+        <div
+          className="price-block style-two"
+          style={{
+            position: "relative",
+          }}
+        >
           <div className="inner-box">
             {/* Custom Label on the top-right */}
             {product?.companies?.length ? (
@@ -181,15 +186,25 @@ function PricingSection() {
           </div>
 
           {pricingData?.length ? (
-            <Carousel
-              value={pricingData}
-              numVisible={3}
-              autoplayInterval={3000}
-              circular
-              numScroll={1}
-              responsiveOptions={responsiveOptions}
-              itemTemplate={productTemplate}
-            />
+            <div
+              className="carousel-container"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                overflow: "hidden",
+                // width: "100%",
+              }}
+            >
+              <Carousel
+                value={pricingData}
+                numVisible={1}
+                autoplayInterval={3000}
+                circular
+                numScroll={1}
+                responsiveOptions={responsiveOptions}
+                itemTemplate={productTemplate}
+              />
+            </div>
           ) : (
             <h1
               style={{
@@ -201,90 +216,6 @@ function PricingSection() {
               No Pricing Plans Available
             </h1>
           )}
-
-          {/* <div className="services-carousel owl-carousel owl-theme">
-            <div className="price-block style-two">
-              <div className="inner-box">
-                <div className="line-one" />
-                <div className="line-two" />
-                <div className="icon-box">
-                  <span className="icon flaticon-rocket-ship" />
-                </div>
-                <h3>Premium </h3>
-                <ul className="price-list">
-                  <li>2gb Hosting</li>
-                  <li>10 Custom Domain</li>
-                  <li>SSD Hosting</li>
-                  <li>50 gb Bandwith</li>
-                  <li>Free Support</li>
-                </ul>
-                <div className="price">
-                  <sub>$</sub>890.00
-                </div>
-                <a href="#" className="theme-btn btn-alternate">
-                  <span className="txt">Try Now</span>
-                </a>
-              </div>
-            </div>
-          </div> */}
-
-          {/* {pricingData?.length ? (
-            <div className="services-carousel owl-carousel owl-theme">
-              <div className="price-block style-two">
-                <div className="inner-box">
-                  <div className="line-one" />
-                  <div className="line-two" />
-                  <div className="icon-box">
-                    <span className="icon flaticon-rocket-ship" />
-                  </div>
-                  <h3>Premium</h3>
-                  <ul className="price-list">
-                    <li>2gb Hosting</li>
-                    <li>10 Custom Domain</li>
-                    <li>SSD Hosting</li>
-                    <li>50 gb Bandwith</li>
-                    <li>Free Support</li>
-                  </ul>
-                  <div className="price">
-                    <sub>$</sub>890.00
-                  </div>
-                  <a href="#" className="theme-btn btn-alternate">
-                    <span className="txt">Try Now</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div style={{ textAlign: "center", fontWeight: "bold" }}>
-              <h3> No Pricing Plan Added </h3>
-            </div>
-          )} */}
-          {/* <div className="services-carousel owl-carousel owl-theme">
-           
-            <div className="price-block style-two">
-              <div className="inner-box">
-                <div className="line-one" />
-                <div className="line-two" />
-                <div className="icon-box">
-                  <span className="icon flaticon-rocket-ship" />
-                </div>
-                <h3>Premium</h3>
-                <ul className="price-list">
-                  <li>2gb Hosting</li>
-                  <li>10 Custom Domain</li>
-                  <li>SSD Hosting</li>
-                  <li>50 gb Bandwith</li>
-                  <li>Free Support</li>
-                </ul>
-                <div className="price">
-                  <sub>$</sub>890.00
-                </div>
-                <a href="#" className="theme-btn btn-alternate">
-                  <span className="txt">Try Now</span>
-                </a>
-              </div>
-            </div>
-          </div> */}
         </div>
       </section>
     </div>

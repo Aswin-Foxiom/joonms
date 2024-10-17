@@ -263,6 +263,21 @@ function Page() {
                               </span>
                             </div>
                           </div>
+
+                          <a
+                            href="https://apps.apple.com/in/app/joonms/id6445896145"
+                            target="_blank"
+                            className="theme-btn btn-style-fourteen mr-2"
+                          >
+                            Get on iOS
+                          </a>
+                          <a
+                            href="https://play.google.com/store/apps/details?id=com.joonms.app.joonms&pcampaignid=web_share"
+                            target="_blank"
+                            className="theme-btn btn-style-fourteen"
+                          >
+                            Get on Android
+                          </a>
                         </div>
                       </form>
                     </div>
