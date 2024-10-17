@@ -275,7 +275,7 @@ function Page() {
                               href="https://play.google.com/store/apps/details?id=com.joonms.app.joonms&pcampaignid=web_share"
                               target="_blank"
                               className="theme-btn btn-style-fourteen"
-                              style={{ padding: "6px 33px" }}
+                              style={{ padding: "6px 30px" }}
                             >
                               Get on Android
                             </a>
