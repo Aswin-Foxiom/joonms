@@ -262,22 +262,24 @@ function Page() {
                                 our mobile app.
                               </span>
                             </div>
-                          </div>
 
-                          <a
-                            href="https://apps.apple.com/in/app/joonms/id6445896145"
-                            target="_blank"
-                            className="theme-btn btn-style-fourteen mr-2"
-                          >
-                            Get on iOS
-                          </a>
-                          <a
-                            href="https://play.google.com/store/apps/details?id=com.joonms.app.joonms&pcampaignid=web_share"
-                            target="_blank"
-                            className="theme-btn btn-style-fourteen"
-                          >
-                            Get on Android
-                          </a>
+                            <a
+                              href="https://apps.apple.com/in/app/joonms/id6445896145"
+                              target="_blank"
+                              className="theme-btn btn-style-fourteen mr-2 mt-2"
+                              style={{ padding: "6px 33px" }}
+                            >
+                              Get on iOS
+                            </a>
+                            <a
+                              href="https://play.google.com/store/apps/details?id=com.joonms.app.joonms&pcampaignid=web_share"
+                              target="_blank"
+                              className="theme-btn btn-style-fourteen"
+                              style={{ padding: "6px 33px" }}
+                            >
+                              Get on Android
+                            </a>
+                          </div>
                         </div>
                       </form>
                     </div>
