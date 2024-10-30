@@ -232,6 +232,9 @@ import "slick-carousel/slick/slick-theme.css";
 import { BaseUrl } from "@/app/utils/BaseUrl";
 
 const PricingSection = () => {
+  const [isLogedIn, setisLogedIn] = useState(
+    localStorage.getItem("token") ? true : false
+  );
   const [pricingData, setPricingData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -369,7 +372,7 @@ const PricingSection = () => {
                     Trial Plan purchase, while other exclusive plans are
                     available for your convenience.
                   </div>
-                  {!localStorage.getItem("token") && (
+                  {!isLogedIn && (
                     <div className="title-text" style={{ color: "red" }}>
                       Please log in to explore your customized plan.
                     </div>
