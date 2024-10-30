@@ -232,9 +232,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { BaseUrl } from "@/app/utils/BaseUrl";
 
 const PricingSection = () => {
-  const [isLogedIn, setisLogedIn] = useState(
-    localStorage.getItem("token") ? true : false
-  );
+  const [isLogedIn, setisLogedIn] = useState(false);
   const [pricingData, setPricingData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -256,6 +254,16 @@ const PricingSection = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("token");
+      if (token) {
+        setisLogedIn(true);
+      }
+      // Use the token as needed
+    }
+  }, []);
 
   useEffect(() => {
     fetchPricingData();
