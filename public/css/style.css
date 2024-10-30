@@ -3273,7 +3273,9 @@ img {
 
 .pricing-section {
 	position: relative;
-	padding: 90px 0px 110px;
+	/* padding: 90px 0px 110px; */
+	padding: 0;
+	margin-top: 15px;
 }
 
 .pricing-section .auto-container {
@@ -3734,6 +3736,21 @@ img {
 }
 
 .price-block .inner-box .price sub {
+	font-size: 16px;
+	top: -2px;
+	position: relative;
+}
+
+.service-block-two .inner-box .price {
+	position: relative;
+	color: #fc0000;
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 1.2em;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.service-block-two .inner-box .price sub {
 	font-size: 16px;
 	top: -2px;
 	position: relative;
@@ -12413,4 +12430,9 @@ img {
 		width: 50%;
 		/* Override for screens wider than 768px */
 	}
+}
+
+[data-nextjs-toast-wrapper] {
+
+	display: none;
 }
