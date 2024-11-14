@@ -8,6 +8,7 @@ import { useFormik } from "formik";
 import { BaseUrl } from "../utils/BaseUrl";
 import { tenantComplaintValidationSchema } from "../utils/validation";
 import { showToast } from "../utils/Toast";
+import { capitalizeFirstLetter } from "../utils/StringFunctions";
 
 function Page() {
   const [companyList, setCompanyList] = useState([]);
@@ -151,12 +152,27 @@ function Page() {
               <div className="reviews-comment-section">
                 <div className="title-box">
                   <h2>Add Your Complaint</h2>
+                  <div
+                    style={{
+                      color: "#841E9C",
+                      paddingTop: "15px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    <span>
+                      Please specify the building or office under the real
+                      estate company&apos;s name.
+                      <br />A representative will reach out to verify your
+                      details, and appropriate action will be taken promptly.
+                    </span>
+                  </div>
                   <div className="text">
                     <span>
                       Add your complaint here, and we will fix it soon.
                     </span>
                   </div>
                 </div>
+
                 <div className="comment-form">
                   <form onSubmit={formik.handleSubmit}>
                     <div className="row">
@@ -225,7 +241,11 @@ function Page() {
                             <option value="">Select Company</option>
                             {companyList.map((company) => (
                               <option key={company._id} value={company._id}>
-                                {company?.name}
+                                {capitalizeFirstLetter(company?.name)} ({" "}
+                                <span style={{ color: "blue" }}>
+                                  {company?.auto_company_id}
+                                </span>{" "}
+                                )
                               </option>
                             ))}
                           </select>
@@ -285,6 +305,18 @@ function Page() {
                       </div> */}
 
                       {/* Building Select */}
+                      {formik.values.company_id && (
+                        <div
+                          className="col-12"
+                          style={{ textAlign: "center", color: "red" }}
+                        >
+                          <span>
+                            {" "}
+                            You can choose either a Building or an Office.{" "}
+                          </span>
+                        </div>
+                      )}
+
                       <div className="col-12 col-md-6">
                         <div className="form-group">
                           <select
