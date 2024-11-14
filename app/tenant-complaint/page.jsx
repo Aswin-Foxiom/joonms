@@ -161,7 +161,7 @@ function Page() {
                   >
                     <span>
                       Please specify the building or office under the real
-                      estate company's name.
+                      estate company&apos;s name.
                       <br />A representative will reach out to verify your
                       details, and appropriate action will be taken promptly.
                     </span>
@@ -172,6 +172,7 @@ function Page() {
                     </span>
                   </div>
                 </div>
+
                 <div className="comment-form">
                   <form onSubmit={formik.handleSubmit}>
                     <div className="row">
