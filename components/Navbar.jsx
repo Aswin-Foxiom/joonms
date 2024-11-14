@@ -99,6 +99,9 @@ function Navbar() {
                       <li>
                         <a href="/#where">Where</a>
                       </li>
+                      <li>
+                        <a href="/tenant-complaint">Tenant Complaint</a>
+                      </li>
                     </ul>
                   </div>
                 </nav>
@@ -165,6 +168,9 @@ function Navbar() {
                 </li>
                 <li>
                   <a href="/#where">Where</a>
+                </li>
+                <li>
+                  <a href="/tenant-complaint">Tenant Complaint</a>
                 </li>
               </ul>
               <div className="social-links">
