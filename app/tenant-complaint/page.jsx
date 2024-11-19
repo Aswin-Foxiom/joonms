@@ -21,7 +21,11 @@ function Page() {
 
   const getCompanies = async () => {
     try {
-      const response = await axios.get(`${BaseUrl}/companies`);
+      const response = await axios.get(`${BaseUrl}/companies`, {
+        params: {
+          isActive: true,
+        },
+      });
       setCompanyList(response?.data?.data?.docs ?? []);
     } catch (err) {
       console.error(err);
