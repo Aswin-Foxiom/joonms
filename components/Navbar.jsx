@@ -31,16 +31,16 @@ function Navbar() {
 
   const onDashboardClicked = () => {
     if (localStorage.getItem("token")) {
-      // window.open(
-      //   `http://localhost:5173/login?token=${localStorage.getItem("token")}`,
-      //   "_blank"
-      // );
       window.open(
-        `https://joonadmin.web.app/login?token=${localStorage.getItem(
-          "token"
-        )}`,
+        `http://localhost:5173/login?token=${localStorage.getItem("token")}`,
         "_blank"
       );
+      // window.open(
+      //   `https://joonadmin.web.app/login?token=${localStorage.getItem(
+      //     "token"
+      //   )}`,
+      //   "_blank"
+      // );
     }
   };
 
@@ -51,7 +51,7 @@ function Navbar() {
           <div className="inner-container">
             <div className="auto-container clearfix">
               <div className="logo-outer">
-                <div className="logo">
+                {/* <div className="logo">
                   <a href="/">
                     <img src="/images/joon/logo1-croped.png" alt="" title="" />
                   </a>
@@ -65,6 +65,39 @@ function Navbar() {
                   >
                     JoonMS
                   </span>
+                  <br />
+                </div> */}
+                <div className="logo">
+                  <a href="/">
+                    <img src="/images/joon/logo1-croped.png" alt="" title="" />
+                  </a>
+                  <div
+                    style={{
+                      display: "inline-block",
+                      verticalAlign: "top",
+                      marginTop: "20px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "40px",
+                        fontWeight: "bold",
+                        marginLeft: "10px",
+                        color: "#FFE000",
+                      }}
+                    >
+                      JoonMS
+                    </span>
+                    <span
+                      style={{
+                        display: "block",
+                        fontSize: "16px",
+                        marginLeft: "10px",
+                      }}
+                    >
+                      Redefining Operational Excellence
+                    </span>
+                  </div>
                 </div>
               </div>
               <div className="nav-outer clearfix">
@@ -97,10 +130,16 @@ function Navbar() {
                         <a href="/#who">Who</a>
                       </li>
                       <li>
+                        <a href="/#why">Why</a>
+                      </li>
+                      <li>
                         <a href="/#where">Where</a>
                       </li>
                       <li>
-                        <a href="/tenant-complaint">Tenant Complaint</a>
+                        <a href="/#how">How</a>
+                      </li>
+                      <li>
+                        <a href="/tenant-complaint">Complaint</a>
                       </li>
                     </ul>
                   </div>
@@ -167,10 +206,16 @@ function Navbar() {
                   <a href="/#who">Who</a>
                 </li>
                 <li>
+                  <a href="/#why">Why</a>
+                </li>
+                <li>
                   <a href="/#where">Where</a>
                 </li>
                 <li>
-                  <a href="/tenant-complaint">Tenant Complaint</a>
+                  <a href="/#how">How</a>
+                </li>
+                <li>
+                  <a href="/tenant-complaint">Complaint</a>
                 </li>
               </ul>
               <div className="social-links">

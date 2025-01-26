@@ -9190,11 +9190,11 @@ img {
 
 .projects-detail-section .lower-content .lower-box {
 	position: relative;
-	margin-top: 60px;
+	/* margin-top: 60px; */
 }
 
 .projects-detail-section .lower-content .lower-box .column {
-	margin-bottom: 30px;
+	/* margin-bottom: 30px; */
 }
 
 .projects-detail-section .lower-content .lower-box h4 {

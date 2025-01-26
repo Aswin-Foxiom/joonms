@@ -11,7 +11,7 @@ function Page() {
       <link href="/css/responsive.css" rel="stylesheet" />
 
       <div className="page-wrapper">
-        {/* <div class="preloader"></div> */}
+        {/* <div className="preloader"></div> */}
         <Navbar />
         <section className="page-title">
           <div className="auto-container">
