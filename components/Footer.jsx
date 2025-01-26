@@ -215,6 +215,14 @@ function Footer() {
                               Privacy & Policy{" "}
                             </a>
                           </li>
+                          <li className="mt-2" style={{ marginLeft: "-10px" }}>
+                            <button
+                              type="button"
+                              class="theme-btn btn-style-fifteen"
+                            >
+                              <span class="txt">Career</span>
+                            </button>
+                          </li>
                         </ul>
                       </div>
                     </div>
@@ -229,7 +237,7 @@ function Footer() {
               <div className="row clearfix">
                 <div className="col-lg-6 col-md-12 col-sm-12">
                   <div className="copyright">
-                    © 2024 copyright all right reserved
+                    © 2025 copyright all right reserved
                   </div>
                 </div>
                 <div className="col-lg-6 col-md-12 col-sm-12">

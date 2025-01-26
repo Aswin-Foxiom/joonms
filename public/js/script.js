@@ -382,8 +382,8 @@
 
     $("input.property-amount").val(
       $(".price-range-slider").slider("values", 0) +
-        " - $" +
-        $(".price-range-slider").slider("values", 1)
+      " - $" +
+      $(".price-range-slider").slider("values", 1)
     );
   }
 
@@ -527,7 +527,7 @@
               queue: false,
             },
           });
-        } catch (err) {}
+        } catch (err) { }
         return false;
       });
 
@@ -753,25 +753,25 @@
   }
 
   //Contact Form Validation
-  if ($("#contact-form").length) {
-    $("#contact-form").validate({
-      rules: {
-        username: {
-          required: true,
-        },
-        email: {
-          required: true,
-          email: true,
-        },
-        subject: {
-          required: true,
-        },
-        message: {
-          required: true,
-        },
-      },
-    });
-  }
+  // if ($("#contact-form").length) {
+  //   $("#contact-form").validate({
+  //     rules: {
+  //       username: {
+  //         required: true,
+  //       },
+  //       email: {
+  //         required: true,
+  //         email: true,
+  //       },
+  //       subject: {
+  //         required: true,
+  //       },
+  //       message: {
+  //         required: true,
+  //       },
+  //     },
+  //   });
+  // }
 
   // Scroll to a Specific Div
   if ($(".scroll-to-target").length) {
@@ -811,7 +811,7 @@
    When window is resizing, do
    ========================================================================== */
 
-  $(window).on("resize", function () {});
+  $(window).on("resize", function () { });
 
   /* ==========================================================================
    When document is loading, do

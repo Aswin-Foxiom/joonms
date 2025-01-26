@@ -39,22 +39,24 @@ function TestimonialSection() {
                   <div className="testimonial-block">
                     <div className="inner-box">
                       <div className="text">
-                        Welcome to Joon, a globally recognized conglomerate,
-                        proudly serving as the sister concern to numerous
-                        enterprises spanning various sectors across the globe.
-                        With a rich legacy of innovation and excellence, we have
-                        embarked on a journey of expansion into diverse
-                        industries, including mobile app development, mobile
-                        sales, sales solutions, banking apps, cybersecurity,
-                        HVAC, and security services. Our commitment to
-                        delivering cutting-edge solutions and unparalleled
-                        service has propelled us to the forefront of the global
-                        market.
+                        At JoonMS, we specialize in delivering cutting-edge
+                        software solutions designed to simplify complex
+                        processes and drive operational efficiency for
+                        businesses across industries. From ERP and CRM systems
+                        to specialized platforms like ReOM, EAM, and e-commerce
+                        solutions, our tools are tailored to address your unique
+                        challenges and streamline your workflows. With a proven
+                        track record in enhancing productivity, accountability,
+                        and sustainability, we empower organizations to achieve
+                        their goals with innovative, user-friendly technology.
+                        At JoonMS, we don’t just provide software—we partner
+                        with you to ensure success and scalability in an
+                        ever-evolving market.
                       </div>
                     </div>
                   </div>
 
-                  <div className="testimonial-block">
+                  {/* <div className="testimonial-block">
                     <div className="inner-box">
                       <div className="text">
                         At Joon, we are not only dedicated to business success
@@ -86,7 +88,7 @@ function TestimonialSection() {
                         communities around the world.
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

@@ -23,3 +23,17 @@ export const tenantComplaintValidationSchema = Yup.object({
   building_id: Yup.string().trim(),
   office_id: Yup.string().trim(),
 });
+
+export const contactValidationSchema = Yup.object({
+  name: Yup.string().required("Name is required").trim(),
+  company_name: Yup.string().required("Company Name is required").trim(),
+  email: Yup.string()
+    .required("Email is required")
+    .email("Invalid email format")
+    .trim(),
+  contact_number: Yup.string()
+    .required("Contact Number is required")
+    .matches(/^[0-9]+$/, "Contact Number must be digits only")
+    .trim(),
+  comment: Yup.string().required("Comment is required").trim(),
+});

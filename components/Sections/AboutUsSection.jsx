@@ -2,7 +2,7 @@ import React from "react";
 
 function AboutUsSection() {
   return (
-    <div id="what">
+    <div>
       <section className="about-section">
         <div
           className="icon-layer paroller"
@@ -41,23 +41,23 @@ function AboutUsSection() {
                   <div className="testimonial-block">
                     <div className="inner-box">
                       <div className="text">
-                        JoonMS is a dynamic hardware distributor and software
-                        developer, proudly headquartered in Dubai and operating
-                        throughout the GCC countries. Our real estate and
-                        property management software has gained widespread
-                        popularity in a short time, and we are expanding our
-                        Real Estate Operations Management (REOM) and Property
-                        Operations Management (POM) solutions. Built on the
-                        fundamentals of CaFM, we are developing these systems
-                        into a comprehensive software suite that will serve as a
-                        full replacement for traditional Enterprise Resource
-                        Planning (ERP) systems, offering businesses a smarter,
-                        more efficient alternative.
+                        JoonMS was founded on the belief that technology should
+                        simplify, not complicate. As a visionary provider of
+                        software solutions, we’re committed to transforming the
+                        way businesses operate by delivering innovative,
+                        intuitive, and reliable tools. Our journey began with a
+                        passion for solving real-world challenges, and today,
+                        we’re proud to empower organizations across industries
+                        with solutions that enhance efficiency, foster growth,
+                        and ensure sustainability. Backed by a team of dedicated
+                        professionals, JoonMS is more than a tech company—we’re
+                        your partner in achieving success and building a better
+                        future for businesses worldwide.
                       </div>
                     </div>
                   </div>
 
-                  <div className="testimonial-block">
+                  {/* <div className="testimonial-block">
                     <div className="inner-box">
                       <div className="text">
                         JoonMS is the Management Ecosystem created for small to
@@ -96,7 +96,7 @@ function AboutUsSection() {
                         we do.
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

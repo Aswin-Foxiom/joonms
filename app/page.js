@@ -12,62 +12,12 @@ import PricingSection from "@/components/Sections/PricingSection";
 import { jwtDecode } from "jwt-decode";
 import { showToast } from "./utils/Toast";
 import AppSection from "@/components/Sections/AppSection";
+import WhatSection from "@/components/Sections/WhatSection";
+import HowSection from "@/components/Sections/HowSection";
+import WhySection from "@/components/Sections/WhySection";
 
 export default function Page() {
-  // useEffect(() => {
-  //   // Check if the welcome message has been shown before
-  //   const hasVisited = localStorage.getItem("hasVisited");
-  //   if (!hasVisited) {
-  //     const token = localStorage.getItem("token");
-  //     try {
-  //       const decoded = token ? jwtDecode(token) : null;
-  //       if (decoded) {
-  //         showToast(`Welcome back! You're logged in now.`, true);
 
-  //         setTimeout(() => {
-  //           // Call your function here
-  //           localStorage.setItem("hasVisited", "true");
-  //         }, 2000); // 2000 milliseconds = 2 seconds
-  //       }
-  //     } catch (error) {
-  //       localStorage.clear(); // Clear localStorage in case of decoding error
-  //       // Alternatively, if you want to remove specific items:
-  //       // localStorage.removeItem('token');
-  //     }
-  //   }
-
-  //   // Function to clear localStorage item on page unload
-  //   const handleBeforeUnload = () => {
-  //     localStorage.removeItem("hasVisited");
-  //   };
-
-  //   // Add event listener for beforeunload
-  //   window.addEventListener("beforeunload", handleBeforeUnload);
-
-  //   // Cleanup the event listener on component unmount
-  //   return () => {
-  //     window.removeEventListener("beforeunload", handleBeforeUnload);
-  //   };
-  // }, []);
-
-  // const Payment_Function = async () => {
-  //   var data = {
-  //     name: "Name",
-  //     price: 200,
-  //     origin_site: "http://localhost:8000",
-  //     enroll_id: 2,
-  //     type: "Programme",
-  //   };
-  //   await axios
-  //     .post(`http://localhost:8000/enroll/create-checkout-session/`, data, {})
-  //     .then((res) => {
-  //       // console.log(res.data)
-  //       console.log("THE RESPONSE IS", res);
-
-  //       window.location.assign(res.data.message.url);
-  //       // return navigate(res.data.message.url)
-  //     });
-  // };
 
   return (
     <div>
@@ -109,7 +59,7 @@ export default function Page() {
 
           <BannerSection />
 
-          <section className="about-contact-section">
+          {/* <section className="about-contact-section">
             <div className="auto-container">
               <div
                 className="inner-container"
@@ -129,7 +79,14 @@ export default function Page() {
               </div>
             </div>
           </section>
-          {/* <button onClick={Payment_Function}> SUBMIT</button> */}
+          <button onClick={Payment_Function}> SUBMIT</button> */}
+
+
+          <WhatSection />
+
+
+          <TestimonialSection />
+
 
           <ServiceSection />
 
@@ -137,10 +94,13 @@ export default function Page() {
 
           {/* <PricingSection /> */}
 
-          <TestimonialSection />
 
-          <PricingSection />
-          <AppSection />
+          {/* <PricingSection /> */}
+          {/* <AppSection /> */}
+          <WhySection />
+
+
+          <HowSection />
 
           {/* <NewsSection /> */}
 

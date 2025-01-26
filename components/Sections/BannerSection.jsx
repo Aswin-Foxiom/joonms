@@ -67,18 +67,19 @@ function BannerSection() {
                 <div className="content-column col-xl-5 col-lg-6 col-md-12 col-sm-12">
                   <div className="inner-column">
                     <div className="content">
-                      <h2>Unlocking the full potential for you.</h2>
+                      <h2>Unlock Seamless Efficiency and Growth.</h2>
                       <div className="text">
-                        Maximizing task efficiency through streamlined processes
-                        and optimized strategies for enhanced productivity and
-                        effectiveness.
+                        Empowering businesses to achieve more with less. Through
+                        innovative solutions and intelligent automation, we help
+                        you simplify processes, enhance productivity, and drive
+                        impactful results.
                       </div>
                       <div className="link-box">
                         <a
                           href="/#app-section"
                           className="theme-btn btn-style-two"
                         >
-                          <span className="txt">Get Our App</span>
+                          <span className="txt">Request Demo</span>
                         </a>
                         {/* <a
                           href="https://www.youtube.com/watch?v=SXZXtD60t2g"
