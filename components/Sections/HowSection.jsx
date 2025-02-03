@@ -1,4 +1,7 @@
+import { BaseUrl } from "@/app/utils/BaseUrl";
+import { showToast } from "@/app/utils/Toast";
 import { contactValidationSchema } from "@/app/utils/validation";
+import axios from "axios";
 import { useFormik } from "formik";
 import { useState } from "react";
 
@@ -16,18 +19,36 @@ function HowSection() {
     },
     validationSchema: contactValidationSchema,
     onSubmit: async (values) => {
-      setLoading(true);
-      try {
-        console.log(values);
-      } catch (error) {
-        console.error("Error submitting form:", error);
-        // Handle error (e.g., show an error message)
-      } finally {
-        setLoading(false);
-      }
+      applyData(values);
     },
   });
 
+  const applyData = (values) => {
+    console.log(values);
+    setLoading(true);
+    const data = {
+      name: values?.name,
+      companyName: values?.company_name,
+      email: values?.email,
+      mobile: values?.contact_number,
+      message: values?.comment,
+    };
+    axios
+      .post(`${BaseUrl}/users/contact-us`, data)
+      .then((res) => {
+        showToast(
+          "Thank you for reaching out! We will get back to you soon.",
+          true
+        );
+      })
+      .catch((error) => {
+        showToast("Something went wrong.Please try again", false);
+      })
+      .finally(() => {
+        setLoading(false);
+        formik.resetForm();
+      });
+  };
   return (
     <div id="how">
       <section className="contact-page-section">
@@ -133,13 +154,23 @@ function HowSection() {
                       </div>
 
                       <div className="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <button
-                          class="theme-btn btn-style-fifteen"
-                          type="submit"
-                          disabled={loading}
-                        >
-                          {loading ? "Sending..." : "Submit"}
-                        </button>
+                        {loading ? (
+                          <button
+                            class="theme-btn btn-style-fifteen"
+                            type="button"
+                            disabled={loading}
+                          >
+                            Sending ...
+                          </button>
+                        ) : (
+                          <button
+                            class="theme-btn btn-style-fifteen"
+                            type="submit"
+                            disabled={loading}
+                          >
+                            Submit
+                          </button>
+                        )}
                       </div>
                     </div>
                   </form>
