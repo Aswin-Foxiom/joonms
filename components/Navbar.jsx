@@ -31,16 +31,16 @@ function Navbar() {
 
   const onDashboardClicked = () => {
     if (localStorage.getItem("token")) {
-      window.open(
-        `http://localhost:5173/login?token=${localStorage.getItem("token")}`,
-        "_blank"
-      );
       // window.open(
-      //   `https://joonadmin.web.app/login?token=${localStorage.getItem(
-      //     "token"
-      //   )}`,
+      //   `http://localhost:5173/login?token=${localStorage.getItem("token")}`,
       //   "_blank"
       // );
+      window.open(
+        `https://joonadmin.web.app/login?token=${localStorage.getItem(
+          "token"
+        )}`,
+        "_blank"
+      );
     }
   };
 
