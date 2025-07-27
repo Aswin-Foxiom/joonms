@@ -174,9 +174,22 @@ function Navbar() {
                         </a>
                       </>
                     ) : (
-                      <a href="/login" className="theme-btn btn-style-one">
-                        <span className="txt">Login</span>
-                      </a>
+                      <>
+                        <a
+                          href="/login"
+                          className="theme-btn btn-style-one mr-2"
+                        >
+                          <span className="txt">Login</span>
+                        </a>
+
+                        <a
+                          href="https://joonadmin.web.app/vendor/login"
+                          target="__blank"
+                          className="theme-btn btn-style-one"
+                        >
+                          <span className="txt">Vendor Login</span>
+                        </a>
+                      </>
                     )}
                   </div>
                 </div>
@@ -264,9 +277,19 @@ function Navbar() {
                       </div>
                     </>
                   ) : (
-                    <a href="/login" className="theme-btn btn-style-one">
-                      <span className="txt">Login</span>
-                    </a>
+                    <>
+                      <a href="/login" className="theme-btn btn-style-one">
+                        <span className="txt">Login</span>
+                      </a>
+
+                      <a
+                        href="https://joonadmin.web.app/vendor/login"
+                        target="__blank"
+                        className="theme-btn btn-style-one"
+                      >
+                        <span className="txt">Vendor Login</span>
+                      </a>
+                    </>
                   )}
                 </div>
               </div>
