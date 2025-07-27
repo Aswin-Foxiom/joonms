@@ -216,12 +216,13 @@ function Footer() {
                             </a>
                           </li>
                           <li className="mt-2" style={{ marginLeft: "-10px" }}>
-                            <button
-                              type="button"
-                              class="theme-btn btn-style-fifteen"
+                            <a
+                              href="https://joonadmin.web.app/vendor/login"
+                              target="__blank"
+                              className="theme-btn btn-style-fifteen"
                             >
-                              <span class="txt">Career</span>
-                            </button>
+                              <span className="txt">Vendor Login</span>
+                            </a>
                           </li>
                         </ul>
                       </div>
