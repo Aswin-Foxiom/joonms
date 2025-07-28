@@ -185,7 +185,7 @@ function Navbar() {
                         <a
                           href="https://joonadmin.web.app/vendor/login"
                           target="__blank"
-                          className="theme-btn btn-style-one"
+                          className="theme-btn btn-style-fifteen"
                         >
                           <span className="txt">Vendor Login</span>
                         </a>
@@ -285,7 +285,7 @@ function Navbar() {
                       <a
                         href="https://joonadmin.web.app/vendor/login"
                         target="__blank"
-                        className="theme-btn btn-style-one"
+                        className="theme-btn btn-style-fifteen"
                       >
                         <span className="txt">Vendor Login</span>
                       </a>
