@@ -50,7 +50,7 @@ function HowSection() {
       });
   };
   return (
-    <div id="how">
+    <div id="contact-us">
       <section className="contact-page-section">
         <div className="auto-container">
           <div className="row clearfix">
