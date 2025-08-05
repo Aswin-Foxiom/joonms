@@ -136,7 +136,7 @@ function Navbar() {
                         <a href="/#where">Where</a>
                       </li>
                       <li>
-                        <a href="/#how">How</a>
+                        <a href="/#contact-us">Contact Us</a>
                       </li>
                       <li>
                         <a href="/tenant-complaint">Complaint</a>
@@ -225,7 +225,7 @@ function Navbar() {
                   <a href="/#where">Where</a>
                 </li>
                 <li>
-                  <a href="/#how">How</a>
+                  <a href="/#contact-us">Contact Us</a>
                 </li>
                 <li>
                   <a href="/tenant-complaint">Complaint</a>
